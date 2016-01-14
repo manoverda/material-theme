@@ -71,6 +71,30 @@
     </dict>
     <dict>
       <key>name</key>
+      <string>Punctuation commented</string>
+      <key>scope</key>
+      <string>markup.heading punctuation.definition.heading, punctuation.definition.fenced.markdown, punctuation.definition.bold.markdown, punctuation.definition.italic.markdown, punctuation.definition.raw.markdown, punctuation.definition.bold, punctuation.definition.italic</string>
+      <key>settings</key>
+      <dict>
+        <key>foreground</key>
+        <string>#546E7A</string>
+      </dict>
+    </dict>
+    <dict>
+      <key>name</key>
+      <string>Blockquote punctuation</string>
+      <key>scope</key>
+      <string>punctuation.definition.blockquote.markdown</string>
+      <key>settings</key>
+      <dict>
+        <key>background</key>
+        <string>#546E7A</string>
+        <key>foreground</key>
+        <string>#546E7A</string>
+      </dict>
+    </dict>
+    <dict>
+      <key>name</key>
       <string>notes</string>
       <key>scope</key>
       <string>notes</string>

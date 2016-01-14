@@ -68,6 +68,30 @@
         <string>#546E7A</string>
       </dict>
     </dict>
+    <dict>
+      <key>name</key>
+      <string>Punctuation commented</string>
+      <key>scope</key>
+      <string>markup.heading punctuation.definition.heading, punctuation.definition.fenced.markdown, punctuation.definition.bold.markdown, punctuation.definition.italic.markdown, punctuation.definition.raw.markdown, punctuation.definition.bold, punctuation.definition.italic</string>
+      <key>settings</key>
+      <dict>
+        <key>foreground</key>
+        <string>#546E7A</string>
+      </dict>
+    </dict>
+    <dict>
+      <key>name</key>
+      <string>Blockquote punctuation</string>
+      <key>scope</key>
+      <string>punctuation.definition.blockquote.markdown</string>
+      <key>settings</key>
+      <dict>
+        <key>background</key>
+        <string>#546E7A</string>
+        <key>foreground</key>
+        <string>#546E7A</string>
+      </dict>
+    </dict>
       <dict>
         <key>name</key>
         <string>notes</string>
@@ -337,7 +361,7 @@ keyword.operator, constant.other.color, meta.tag, punctuation.definition.tag, pu
       <key>name</key>
       <string>Headings</string>
       <key>scope</key>
-      <string>markup.heading punctuation.definition.heading, entity.name.section</string>
+      <string>entity.name.section</string>
       <key>settings</key>
       <dict>
         <key>fontStyle</key>
@@ -361,7 +385,7 @@ keyword.operator, constant.other.color, meta.tag, punctuation.definition.tag, pu
       <key>name</key>
       <string>Bold</string>
       <key>scope</key>
-      <string>markup.bold, punctuation.definition.bold, todo.bold</string>
+      <string>markup.bold, todo.bold</string>
       <key>settings</key>
       <dict>
         <key>fontStyle</key>
@@ -374,7 +398,7 @@ keyword.operator, constant.other.color, meta.tag, punctuation.definition.tag, pu
       <key>name</key>
       <string>Italic</string>
       <key>scope</key>
-      <string>markup.italic, punctuation.definition.italic, todo.italic</string>
+      <string>markup.italic, todo.italic</string>
       <key>settings</key>
       <dict>
         <key>fontStyle</key>
