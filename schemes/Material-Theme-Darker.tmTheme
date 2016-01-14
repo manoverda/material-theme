@@ -83,6 +83,28 @@
     </dict>
     <dict>
       <key>name</key>
+      <string>Punctuation completed</string>
+      <key>scope</key>
+      <string>punctuation.definition.bullet.completed.todo</string>
+      <key>settings</key>
+      <dict>
+        <key>foreground</key>
+        <string>#3ED370</string>
+      </dict>
+    </dict>
+    <dict>
+      <key>name</key>
+      <string>Punctuation cancelled</string>
+      <key>scope</key>
+      <string>punctuation.definition.bullet.cancelled.todo</string>
+      <key>settings</key>
+      <dict>
+        <key>foreground</key>
+        <string>#d3423e</string>
+      </dict>
+    </dict>
+    <dict>
+      <key>name</key>
       <string>notes</string>
       <key>scope</key>
       <string>notes</string>
