@@ -160,7 +160,7 @@
       <key>name</key>
       <string>Classes</string>
       <key>scope</key>
-      <string>support.class, entity.name.class, entity.name.type.class, variable.language.this.js</string>
+      <string>support.class, entity.name.class, entity.name.type.class, variable.language.this.js, entity.name.type, support.type</string>
       <key>settings</key>
       <dict>
         <key>foreground</key>
