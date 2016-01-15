@@ -398,6 +398,17 @@ keyword.operator, constant.other.color, meta.tag, punctuation.definition.tag, pu
     </dict>
     <dict>
       <key>name</key>
+      <string>CodeBlock</string>
+      <key>scope</key>
+      <string>markup.raw.block</string>
+      <key>settings</key>
+      <dict>
+        <key>background</key>
+        <string>#44444430</string>
+      </dict>
+    </dict>
+    <dict>
+      <key>name</key>
       <string>Code</string>
       <key>scope</key>
       <string>markup.raw.inline</string>

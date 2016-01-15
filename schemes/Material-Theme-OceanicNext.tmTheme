@@ -207,6 +207,17 @@
     </dict>
     <dict>
       <key>name</key>
+      <string>CodeBlock</string>
+      <key>scope</key>
+      <string>markup.raw.block</string>
+      <key>settings</key>
+      <dict>
+        <key>background</key>
+        <string>#546E7A30</string>
+      </dict>
+    </dict>
+    <dict>
+      <key>name</key>
       <string>entity.name.method.js</string>
       <key>scope</key>
       <string>entity.name.method.js</string>
