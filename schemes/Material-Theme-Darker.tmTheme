@@ -1169,6 +1169,30 @@
 				<string>#f07178</string>
 			</dict>
 		</dict>
+		<dict>
+			<key>name</key>
+			<string>Diff Header</string>
+			<key>scope</key>
+			<string>meta.diff.header.to-file, meta.diff.header.from-file</string>
+			<key>settings</key>
+			<dict>
+				<key>fontStyle</key>
+				<string>bold</string>
+				<key>foreground</key>
+				<string>#F8E71C</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Diff range</string>
+			<key>scope</key>
+			<string>meta.diff.range.unified, punctuation.definition.range.diff</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#4A4A4A</string>
+			</dict>
+		</dict>
 	</array>
 	<key>uuid</key>
 	<string>4F44C0F5-1F8D-4C52-8BAB-F0951904C1EC</string>
