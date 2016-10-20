@@ -38,7 +38,7 @@
 				<key>selection</key>
 				<string>#61616150</string>
 				<key>selectionBorder</key>
-				<string>#61616150</string>
+				<string>#89DDFF</string>
 				<key>shadow</key>
 				<string>#00000010</string>
 				<key>stackGuide</key>
@@ -62,7 +62,7 @@
 			<key>name</key>
 			<string>Variable</string>
 			<key>scope</key>
-			<string>variable, string constant.other.placeholder</string>
+			<string>variable</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -551,7 +551,7 @@
 			<key>name</key>
 			<string>Markdown - Markup Raw Inline</string>
 			<key>scope</key>
-			<string>text.html.markdown markup.raw.inline</string>
+			<string>markup.raw.inline</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -573,7 +573,7 @@
 			<key>name</key>
 			<string>Markdown - Heading</string>
 			<key>scope</key>
-			<string>markdown.heading, markup.heading | markup.heading entity.name</string>
+			<string>markdown.heading, markup.heading | markup.heading entity.name, entity.name.section</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -811,7 +811,7 @@
 			<key>name</key>
 			<string>Markdown - List Punctuation</string>
 			<key>scope</key>
-			<string>punctuation.definition.list_item.markdown</string>
+			<string>punctuation.definition.list_item</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -1191,6 +1191,17 @@
 			<dict>
 				<key>foreground</key>
 				<string>#4A4A4A</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>PlaceHolder</string>
+			<key>scope</key>
+			<string>constant.other.placeholder</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#FF5370</string>
 			</dict>
 		</dict>
 	</array>
