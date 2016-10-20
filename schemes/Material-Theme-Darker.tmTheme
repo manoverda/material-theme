@@ -597,7 +597,7 @@
 			<key>name</key>
 			<string>Markup - Italic</string>
 			<key>scope</key>
-			<string>markup.italic</string>
+			<string>markup.italic, todo.italic</string>
 			<key>settings</key>
 			<dict>
 				<key>fontStyle</key>
@@ -610,7 +610,7 @@
 			<key>name</key>
 			<string>Markup - Bold</string>
 			<key>scope</key>
-			<string>markup.bold, markup.bold string</string>
+			<string>markup.bold, markup.bold string, todo.bold</string>
 			<key>settings</key>
 			<dict>
 				<key>fontStyle</key>
@@ -776,7 +776,7 @@
 			<key>name</key>
 			<string>Markdown - Punctuation Definition</string>
 			<key>scope</key>
-			<string>text.html.markdown punctuation.definition</string>
+			<string>text.html.markdown punctuation.definition, text.todo punctuation.definition</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -1004,6 +1004,105 @@
 			<dict>
 				<key>foreground</key>
 				<string>#FF5370</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>text cancelled</string>
+			<key>scope</key>
+			<string>text.cancelled, meta.punctuation.separator</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#4A4A4A</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>notes</string>
+			<key>scope</key>
+			<string>notes</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#FFCB6B</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Punctuation completed</string>
+			<key>scope</key>
+			<string>punctuation.definition.bullet.completed.todo</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#3ED370</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Punctuation cancelled</string>
+			<key>scope</key>
+			<string>punctuation.definition.bullet.cancelled.todo</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#D3423E</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Punctuation pending</string>
+			<key>scope</key>
+			<string>punctuation.definition.bullet.pending.todo</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#89DDFF</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Critical todo</string>
+			<key>scope</key>
+			<string>string.other.tag.todo.critical</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#D3423E</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Today todo</string>
+			<key>scope</key>
+			<string>string.other.tag.todo.today</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#FF5370</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>High todo</string>
+			<key>scope</key>
+			<string>string.other.tag.todo.high</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#F78C6C</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Low todo</string>
+			<key>scope</key>
+			<string>string.other.tag.todo.low</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#C3E88D</string>
 			</dict>
 		</dict>
 	</array>
