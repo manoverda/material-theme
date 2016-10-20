@@ -200,7 +200,7 @@
 			<key>name</key>
 			<string>String, Symbols, Inherited Class, Markup Heading</string>
 			<key>scope</key>
-			<string>string, constant.other.symbol, constant.other.key, entity.other.inherited-class, markup.heading, markup.inserted.git_gutter, meta.group.braces.curly constant.other.object.key.js string.unquoted.label.js</string>
+			<string>string, constant.other.symbol, constant.other.key, entity.other.inherited-class, markup.inserted.git_gutter, meta.group.braces.curly constant.other.object.key.js string.unquoted.label.js</string>
 			<key>settings</key>
 			<dict>
 				<key>fontStyle</key>
@@ -540,7 +540,7 @@
 			<key>name</key>
 			<string>Markdown - Plain</string>
 			<key>scope</key>
-			<string>text.html.markdown, punctuation.definition.list_item.markdown</string>
+			<string>text.html.markdown</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -554,21 +554,8 @@
 			<string>text.html.markdown markup.raw.inline</string>
 			<key>settings</key>
 			<dict>
-				<key>background</key>
-				<string>#65737e</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>name</key>
-			<string>Markdown - Markup Raw Inline Punctuation</string>
-			<key>scope</key>
-			<string>text.html.markdown punctuation.definition.raw.markdown</string>
-			<key>settings</key>
-			<dict>
-				<key>background</key>
-				<string>#65737e</string>
 				<key>foreground</key>
-				<string>#000000</string>
+				<string>#FFCB6B</string>
 			</dict>
 		</dict>
 		<dict>
@@ -586,11 +573,11 @@
 			<key>name</key>
 			<string>Markdown - Heading</string>
 			<key>scope</key>
-			<string>markdown.heading, markup.heading | markup.heading entity.name, markup.heading.markdown punctuation.definition.heading.markdown</string>
+			<string>markdown.heading, markup.heading | markup.heading entity.name</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#C3E88D</string>
+				<string>#89DDFF</string>
 			</dict>
 		</dict>
 		<dict>
@@ -617,6 +604,17 @@
 				<string>bold</string>
 				<key>foreground</key>
 				<string>#f07178</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Markup - Strikethrough</string>
+			<key>scope</key>
+			<string>markup.strikethrough</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#4A4A4A</string>
 			</dict>
 		</dict>
 		<dict>
@@ -664,9 +662,9 @@
 			<key>settings</key>
 			<dict>
 				<key>background</key>
-				<string>#65737e</string>
+				<string>#4A4A4A</string>
 				<key>foreground</key>
-				<string>#65737e</string>
+				<string>#4A4A4A</string>
 			</dict>
 		</dict>
 		<dict>
@@ -679,7 +677,7 @@
 				<key>fontStyle</key>
 				<string>italic</string>
 				<key>foreground</key>
-				<string></string>
+				<string>#B7C2CA</string>
 			</dict>
 		</dict>
 		<dict>
@@ -734,7 +732,7 @@
 			<key>settings</key>
 			<dict>
 				<key>background</key>
-				<string>#00000050</string>
+				<string>#44444430</string>
 			</dict>
 		</dict>
 		<dict>
@@ -745,7 +743,7 @@
 			<key>settings</key>
 			<dict>
 				<key>background</key>
-				<string>#00000050</string>
+				<string>#44444430</string>
 			</dict>
 		</dict>
 		<dict>
@@ -802,11 +800,22 @@
 			<key>settings</key>
 			<dict>
 				<key>background</key>
-				<string>#00000050</string>
+				<string>#6D6D6D60</string>
 				<key>fontStyle</key>
 				<string>bold</string>
 				<key>foreground</key>
-				<string>#65737e</string>
+				<string>#444444</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Markdown - List Punctuation</string>
+			<key>scope</key>
+			<string>punctuation.definition.list_item.markdown</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#F1E655</string>
 			</dict>
 		</dict>
 		<dict>
