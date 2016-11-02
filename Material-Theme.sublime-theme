@@ -57,7 +57,7 @@
   
     {
       "class": "fold_button_control",
-      "layer0.texture": "Material Theme/assets/commons/fold_right.png",
+      "layer0.texture": "Material Theme/assets/default/fold_right.png",
       "layer0.opacity": 1.0,
       "layer0.inner_margin": 0,
       "layer1.texture": "Material Theme/assets/commons/fold_right--hover.png",
@@ -254,7 +254,7 @@
   
     {
       "class": "quick_panel_score_label",
-      "fg": [128, 203, 196, 255],
+      "fg": [176, 190, 197, 255],
       "selected_fg": [255, 255, 255, 255]
     },
   
@@ -270,7 +270,7 @@
       "tint_index": 1,
       "layer0.inner_margin": [2, 6],
       "layer0.opacity": 1.0,
-      "content_margin": [12, 0, 8, 0],
+      "content_margin": [6, 0, 8, 0],
       "tab_overlap": 0,
       "tab_width": 180,
       "tab_min_width": 64,
@@ -580,6 +580,16 @@
        "layer1.opacity": { "target": 1.0, "speed": 5.0, "interpolation": "smoothstep" }
     },
   
+      // Bullet Tree Indicator
+  
+    {
+      "class": "tree_row",
+      "settings": ["material_theme_bullet_tree_indicator"],
+      "attributes": ["selected"],
+      "layer1.texture": "Material Theme/assets/commons/tree_highlight--bullet.png",
+      "layer1.inner_margin": [22, 16, 0, 0]
+    },
+  
     {
       "class": "sidebar_label",
       "color": [96, 125, 139],
@@ -592,7 +602,7 @@
     {
       "class": "sidebar_label",
       "parents": [{"class": "tree_row", "attributes": ["hover"]}],
-      "color": [175, 189, 196],
+      "color": [255,255,255],
       "shadow_color": [255, 255, 255, 0],
       "shadow_offset": [0, 0]
     },
@@ -601,7 +611,7 @@
       "class": "sidebar_label",
       "parents": [{"class": "tree_row", "attributes": ["selected"]}],
       "font.bold": false,
-      "color": [255, 255, 255]
+      "color": [128, 203, 196]
     },
   
     {
@@ -659,6 +669,12 @@
   
     {
       "class": "icon_file_type",
+      "parents": [{"class": "tree_row", "attributes": ["hover"]}],
+      "layer0.opacity": { "target": 1.0, "speed": 3.0, "interpolation": "smoothstep" }
+    },
+  
+    {
+      "class": "icon_file_type",
       "parents": [{"class": "tree_row", "attributes": ["selected"]}],
       "layer0.opacity": 1,
       "content_margin": [9, 9]
@@ -668,15 +684,28 @@
   
     {
       "class": "icon_folder",
-      "content_margin": [10, 8],
+      "content_margin": [11, 7],
       "layer0.tint": [38, 50, 56],
       "layer0.opacity": 0,
       "layer1.texture": "Material Theme/assets/default/folder.png",
-      "layer1.opacity": 1,
+      "layer1.opacity": 1.0,
       "layer2.texture": "Material Theme/assets/commons/folder--hover.png",
       "layer2.opacity": 0.0,
       "layer3.texture": "Material Theme/assets/commons/folder_opened--hover.png",
       "layer3.opacity": 0.0,
+    },
+  
+      // Arrow icon folder
+    {
+      "class": "icon_folder",
+      "settings": ["material_theme_arrow_folders"],
+      "layer0.opacity": 0,
+      "layer1.texture": "Material Theme/assets/default/arrow_folder.png",
+      "layer1.opacity": 1,
+      "layer2.texture": "Material Theme/assets/commons/arrow_folder--hover.png",
+      "layer2.opacity": 0.0,
+      "layer3.texture": "Material Theme/assets/commons/arrow_folder--opened.png",
+      "layer3.opacity": 0.0
     },
   
     {
@@ -733,6 +762,15 @@
       "layer3.opacity": 1.0,
     },
   
+  
+      // Arrow icon folder Expandend - Hover
+    {
+      "class": "icon_folder",
+      "settings": ["material_theme_arrow_folders"],
+      "parents": [{ "class": "tree_row", "attributes": ["expanded", "hover"] }],
+      "layer3.texture": "Material Theme/assets/commons/arrow_folder--opened.png",
+    },
+  
     {
       "class": "icon_folder",
       "parents":
@@ -777,7 +815,7 @@
       "class": "icon_folder_dup",
       "layer0.texture": "Material Theme/assets/default/folder_dup.png",
       "layer0.opacity": 1.0,
-      "content_margin": [10, 8]
+      "content_margin": [11, 7]
     },
   
     {
@@ -889,45 +927,51 @@
   
     {
       "class": "scroll_bar_control",
-      "layer0.texture": "Material Theme/assets/default/normal_bar_vertical.png",
-      "layer0.opacity": 1.0,
+      "layer0.tint": [38, 50, 56],
       "layer0.inner_margin": [0, 6],
+      "layer0.opacity": 1.0,
+      "layer1.texture": "Material Theme/assets/default/normal_bar_vertical.png",
+      "layer1.opacity": 1.0,
+      "layer1.inner_margin": [0, 6],
       "blur": false
     },
   
       // Normal Vertical scrollbar track inside overlay panel
   
-    {
-        "class": "scroll_bar_control",
-        "parents": [{"class": "overlay_control"}],
-        "layer0.tint": [38, 50, 56, 0],
-        "layer0.opacity": 1.0,
-        "layer0.inner_margin": [0, 6],
-        "blur": false
-     },
+    // {
+    //   "class": "scroll_bar_control",
+    //   "parents": [{"class": "overlay_control"}],
+    //   "layer0.tint": [38, 50, 56, 0],
+    //   "layer0.opacity": 1.0,
+    //   "layer0.inner_margin": [0, 6],
+    //   "blur": false
+    // },
   
       // Normal horizontal scrollbar track
   
-     {
-        "class": "scroll_bar_control",
-        "attributes": ["horizontal"],
-        "layer0.texture": "Material Theme/assets/default/normal_bar_horizontal.png",
-        "layer0.opacity": 1.0,
-        "layer0.inner_margin": [6, 0],
-        "blur": false
-     },
+    {
+      "class": "scroll_bar_control",
+      "attributes": ["horizontal"],
+      "layer0.tint": [38, 50, 56],
+      "layer0.inner_margin": [0, 6],
+      "layer0.opacity": 1.0,
+      "layer1.texture": "Material Theme/assets/default/normal_bar_horizontal.png",
+      "layer1.opacity": 1.0,
+      "layer1.inner_margin": [6, 0],
+      "blur": false
+    },
   
       // Normal horizontal scrollbar track inside overlay panel
   
-    {
-        "class": "scroll_bar_control",
-        "attributes": ["horizontal"],
-        "parents": [{"class": "overlay_control"}],
-        "layer0.tint": [38, 50, 56, 0],
-        "layer0.opacity": 0.0,
-        "layer0.inner_margin": [0, 2],
-        "blur": false
-     },
+    // {
+    //   "class": "scroll_bar_control",
+    //   "attributes": ["horizontal"],
+    //   "parents": [{"class": "overlay_control"}],
+    //   "layer0.tint": [38, 50, 56, 0],
+    //   "layer0.opacity": 0.0,
+    //   "layer0.inner_margin": [0, 2],
+    //   "blur": false
+    // },
   
       // Scrollbars corner
   
@@ -1045,7 +1089,7 @@
       "class": "minimap_control",
       "settings": ["always_show_minimap_viewport"],
       "viewport_color": [128, 203, 196, 80],
-      "viewport_opacity": 0.4,
+      "viewport_opacity": 0.5,
     },
   
     {
@@ -1228,14 +1272,20 @@
   
     // Button labels
   
-     {
-        "class": "label_control",
-        "parents": [{"class": "button_control"}],
-        "color": [176, 190, 196],
-        "font.bold": true
-     },
+    {
+       "class": "label_control",
+       "parents": [{"class": "button_control"}],
+       "color": [96, 125, 139],
+       "font.bold": true
+    },
   
-     {
+    {
+       "class": "label_control",
+       "parents": [{"class": "button_control", "attributes": ["hover"]}],
+       "color": [255,255,255]
+    },
+  
+    {
       "class": "button_control",
       "content_margin": [6, 12, 6, 12],
       "min_size": [75, 0],
@@ -1464,6 +1514,386 @@
     },
   
   
+  // Teal Accent Color
+  // ===========================================================================
+  
+    {
+      "class": "panel_button_control",
+      "settings": ["material_theme_accent_teal"],
+      "attributes": ["hover"],
+      "layer0.texture": "Material Theme/assets/accent-teal/overflow_menu--hover.png"
+    },
+  
+    // tooltip
+  
+    {
+      "class": "tool_tip_control",
+      "settings": ["material_theme_accent_teal"],
+      "layer0.tint": [128, 203, 196],
+    },
+  
+    {
+      "class": "progress_gauge_control",
+      "settings": ["material_theme_accent_teal"],
+      "layer0.tint": [128, 203, 196],
+    },
+  
+    {
+      "class": "auto_complete_label",
+      "settings": ["material_theme_accent_teal"],
+      "match_fg": [128, 203, 196],
+      "selected_match_fg": [128, 203, 196]
+    },
+  
+    {
+      "class": "tool_tip_label_control",
+      "settings": ["material_theme_accent_teal"],
+      "color": [255, 255, 255, 255]
+    },
+  
+      // Sidebar tree highlight
+  
+    {
+      "class": "tree_row",
+      "settings": ["material_theme_accent_teal"],
+      "layer1.texture": "Material Theme/assets/accent-teal/tree_highlight.png",
+    },
+  
+    {
+      "class": "tree_row",
+      "settings": ["material_theme_accent_teal", "material_theme_bullet_tree_indicator"],
+      "layer1.texture": "Material Theme/assets/accent-teal/tree_highlight--bullet.png",
+      "layer1.inner_margin": [22, 16, 0, 0]
+    },
+  
+      // Tabs
+  
+    {
+      "class": "tab_control",
+      "settings": ["material_theme_accent_teal"],
+      "layer1.texture": "Material Theme/assets/accent-teal/tab_current.png",
+    },
+  
+      // Tabs close button
+  
+    {
+      "class": "tab_close_button",
+      "settings": ["material_theme_accent_teal"],
+      "layer1.texture": "Material Theme/assets/accent-teal/close_icon--hover.png",
+      "layer3.texture": "Material Theme/assets/accent-teal/dirty_icon--hover.png"
+    },
+  
+      // Opened files
+  
+    {
+      "class": "close_button",
+      "settings": ["material_theme_accent_teal"],
+      "layer1.texture": "Material Theme/assets/accent-teal/close_icon--hover.png",
+    },
+  
+      // Dirty opened files
+  
+    {
+      "class": "close_button",
+      "attributes": ["dirty"],
+      "settings": ["material_theme_accent_teal"],
+      "layer0.texture": "Material Theme/assets/accent-teal/dirty_icon--hover.png",
+    },
+  
+    {
+      "class": "sidebar_label",
+      "settings": ["material_theme_accent_teal"],
+      "parents": [{"class": "tree_row", "attributes": ["selected"]}],
+      "color": [128, 203, 196]
+    },
+  
+    {
+      "class": "sidebar_label",
+      "settings": ["material_theme_accent_teal"],
+      "parents": [{"class": "tree_row", "attributes": ["expanded"]}],
+      "color": [128, 203, 196]
+    },
+  
+    {
+      "class": "icon_folder",
+      "settings": ["material_theme_accent_teal"],
+      "layer2.texture": "Material Theme/assets/accent-teal/folder--hover.png",
+      "layer3.texture": "Material Theme/assets/accent-teal/folder_opened--hover.png",
+    },
+  
+    {
+      "class": "icon_folder",
+      "settings": ["material_theme_accent_teal"],
+      "parents": [{ "class": "tree_row", "attributes": ["expanded", "hover"] }],
+      "layer3.texture":
+      {
+        "keyframes":
+        [
+          "Material Theme/assets/accent-teal/folder_opened--hover-0.png",
+          "Material Theme/assets/accent-teal/folder_opened--hover-1.png",
+          "Material Theme/assets/accent-teal/folder_opened--hover-2.png",
+          "Material Theme/assets/accent-teal/folder_opened--hover-3.png",
+          "Material Theme/assets/accent-teal/folder_opened--hover-4.png",
+          "Material Theme/assets/accent-teal/folder_opened--hover-5.png",
+          "Material Theme/assets/accent-teal/folder_opened--hover-5.png",
+          "Material Theme/assets/accent-teal/folder_opened--hover-5.png",
+          "Material Theme/assets/accent-teal/folder_opened--hover-6.png",
+          "Material Theme/assets/accent-teal/folder_opened--hover-6.png",
+          "Material Theme/assets/accent-teal/folder_opened--hover-6.png",
+          "Material Theme/assets/accent-teal/folder_opened--hover-6.png",
+          "Material Theme/assets/accent-teal/folder_opened--hover-7.png",
+        ],
+        "loop": false,
+        "frame_time": 0.020,
+      }
+    },
+  
+      // Folder loading
+  
+    {
+      "class": "icon_folder_loading",
+      "settings": ["material_theme_accent_teal"],
+      "layer0.texture":
+      {
+        "keyframes":
+        [
+          "Material Theme/assets/accent-teal/spinner7.png",
+          "Material Theme/assets/accent-teal/spinner6.png",
+          "Material Theme/assets/accent-teal/spinner5.png",
+          "Material Theme/assets/accent-teal/spinner4.png",
+          "Material Theme/assets/accent-teal/spinner3.png",
+          "Material Theme/assets/accent-teal/spinner2.png",
+          "Material Theme/assets/accent-teal/spinner1.png",
+          "Material Theme/assets/accent-teal/spinner.png",
+        ],
+        "loop": true,
+        "frame_time": 0.075,
+      },
+    },
+  
+      // Arrow icon folder
+    {
+      "class": "icon_folder",
+      "settings": ["material_theme_arrow_folders", "material_theme_accent_teal"],
+      "layer2.texture": "Material Theme/assets/accent-teal/arrow_folder--hover.png",
+      "layer2.opacity": 0.0,
+      "layer3.texture": "Material Theme/assets/accent-teal/arrow_folder--opened.png",
+      "layer3.opacity": 0.0
+    },
+  
+    {
+      "class": "icon_folder",
+      "settings": ["material_theme_arrow_folders", "material_theme_accent_teal"],
+      "parents":
+      [{ "class": "tree_row", "attributes": ["expanded"] }],
+      "layer1.opacity": 0.0,
+      "layer2.opacity": 0.0,
+      "layer3.opacity": 1.0
+    },
+  
+    {
+      "class": "icon_folder",
+      "settings": ["material_theme_arrow_folders", "material_theme_accent_teal"],
+      "parents":
+      [ { "class": "tree_row", "attributes": ["hover"] }],
+      "layer1.opacity": 0.0,
+      "layer2.opacity": 1.0,
+      "layer3.opacity": 0.0
+    },
+  
+    {
+      "class": "icon_folder",
+      "settings": ["material_theme_arrow_folders", "material_theme_accent_teal"],
+      "parents":
+      [ { "class": "tree_row", "attributes": ["expanded", "hover"] }],
+      "layer1.opacity": 0.0,
+      "layer2.opacity": 0.0,
+      "layer3.opacity": 1.0
+    },
+  
+      // tab set scroll left | scroll right
+  
+    {
+      "class": "scroll_tabs_left_button",
+      "settings": ["material_theme_accent_teal"],
+      "layer1.texture": "Material Theme/assets/accent-teal/arrow_left--hover.png",
+    },
+  
+    {
+      "class": "scroll_tabs_right_button",
+      "settings": ["material_theme_accent_teal"],
+      "layer1.texture": "Material Theme/assets/accent-teal/arrow_right--hover.png",
+    },
+  
+  
+    {
+      "class": "fold_button_control",
+      "settings": ["material_theme_accent_teal"],
+      "layer1.texture": "Material Theme/assets/accent-teal/fold_right--hover.png",
+    },
+  
+    {
+      "class": "fold_button_control",
+      "attributes": ["expanded"],
+      "settings": ["material_theme_accent_teal"],
+      "layer1.texture": "Material Theme/assets/accent-teal/fold_down--hover.png"
+    },
+  
+      // Panel labels
+  
+    {
+      "class": "quick_panel_label",
+      "settings": ["material_theme_accent_teal"],
+      "match_fg": [128, 203, 196],
+      "selected_fg": [255, 255, 255, 255],
+      "selected_match_fg": [128, 203, 196]
+    },
+  
+      // Panel labels
+  
+    {
+      "class": "quick_panel_label",
+      "settings": ["material_theme_accent_teal"],
+      "parents": [{"class": "overlay_control"}],
+      "match_fg": [128, 203, 196],
+      "selected_fg": [255, 255, 255, 255],
+      "selected_match_fg": [128, 203, 196]
+    },
+  
+      // Panels sublabels
+  
+    {
+      "class": "quick_panel_path_label",
+      "settings": ["material_theme_accent_teal"],
+      "match_fg": [128, 203, 196],
+      "selected_fg": [255, 255, 255, 255],
+      "selected_match_fg": [128, 203, 196]
+    },
+  
+      // Panels data / score
+  
+    {
+      "class": "show_tabs_dropdown_button",
+      "settings": ["material_theme_accent_teal"],
+      "layer1.texture": "Material Theme/assets/accent-teal/overflow_menu--hover.png",
+    },
+  
+      // Textline input oveflow menu
+  
+    {
+      "class": "dropdown_button_control",
+      "settings": ["material_theme_accent_teal"],
+      "layer1.texture": "Material Theme/assets/accent-teal/overflow_menu--hover.png",
+    },
+  
+    // Buttons icons settings
+    // =====================================================================
+  
+      // Regex Icon
+    {
+      "class": "icon_regex",
+      "settings": ["material_theme_accent_teal"],
+      "layer0.texture": "Material Theme/assets/accent-teal/find_regex--hover.png",
+    },
+  
+      // Preserve case sensitive
+  
+    {
+      "class": "icon_case",
+      "settings": ["material_theme_accent_teal"],
+      "layer0.texture": "Material Theme/assets/accent-teal/find_case--hover.png",
+    },
+  
+      // Wholeword
+  
+    {
+      "class": "icon_whole_word",
+      "settings": ["material_theme_accent_teal"],
+      "layer0.texture": "Material Theme/assets/accent-teal/find_word--hover.png",
+    },
+  
+      // Wrap
+  
+    {
+      "class": "icon_wrap",
+      "settings": ["material_theme_accent_teal"],
+      "layer0.texture": "Material Theme/assets/accent-teal/find_wrap--hover.png",
+    },
+  
+      // In selection
+  
+    {
+      "class": "icon_in_selection",
+      "settings": ["material_theme_accent_teal"],
+      "layer0.texture": "Material Theme/assets/accent-teal/find_inselection--hover.png",
+    },
+  
+  
+      // Highlight Result
+  
+    {
+      "class": "icon_highlight",
+      "settings": ["material_theme_accent_teal"],
+      "layer0.texture": "Material Theme/assets/accent-teal/find_highlight--hover.png",
+    },
+  
+      // Preserve Case
+  
+    {
+      "class": "icon_preserve_case",
+      "settings": ["material_theme_accent_teal"],
+      "layer0.texture": "Material Theme/assets/accent-teal/replace_preserve_case--hover.png",
+    },
+  
+      // Show context
+  
+    {
+      "class": "icon_context",
+      "settings": ["material_theme_accent_teal"],
+      "layer0.texture": "Material Theme/assets/accent-teal/find_context--hover.png",
+    },
+  
+      // Use buffer
+  
+    {
+      "class": "icon_use_buffer",
+      "settings": ["material_theme_accent_teal"],
+      "layer0.texture": "Material Theme/assets/accent-teal/use_buffer--hover.png",
+    },
+  
+      // Reverse direction
+  
+    {
+      "class": "icon_reverse",
+      "settings": ["material_theme_accent_teal"],
+      "layer0.texture": "Material Theme/assets/accent-teal/find_reverse--hover.png",
+    },
+  
+      // Minimap
+  
+    {
+      "class": "minimap_control",
+      "settings": ["material_theme_accent_teal"],
+      "viewport_color": [128, 203, 196, 60]
+    },
+  
+      // Scrollbars
+  
+    {
+      "class": "puck_control",
+      "settings": ["material_theme_accent_scrollbars", "material_theme_accent_teal"],
+      "layer1.texture": "Material Theme/assets/accent-teal/thumb_vertical.png",
+      "layer1.opacity": 0.8
+    },
+  
+    {
+      "class": "puck_control",
+      "attributes": ["horizontal"],
+      "settings": ["material_theme_accent_scrollbars", "material_theme_accent_teal"],
+      "layer1.texture": "Material Theme/assets/accent-teal/thumb_horizontal.png",
+      "layer1.opacity": 0.8
+    },
+  
   // Lime Accent Color
   // ===========================================================================
   
@@ -1509,6 +1939,13 @@
       "layer1.texture": "Material Theme/assets/accent-lime/tree_highlight.png",
     },
   
+    {
+      "class": "tree_row",
+      "settings": ["material_theme_accent_lime", "material_theme_bullet_tree_indicator"],
+      "layer1.texture": "Material Theme/assets/accent-lime/tree_highlight--bullet.png",
+      "layer1.inner_margin": [22, 16, 0, 0]
+    },
+  
       // Tabs
   
     {
@@ -1541,6 +1978,13 @@
       "attributes": ["dirty"],
       "settings": ["material_theme_accent_lime"],
       "layer0.texture": "Material Theme/assets/accent-lime/dirty_icon--hover.png",
+    },
+  
+    {
+      "class": "sidebar_label",
+      "settings": ["material_theme_accent_lime"],
+      "parents": [{"class": "tree_row", "attributes": ["selected"]}],
+      "color": [124, 179, 66]
     },
   
     {
@@ -1607,6 +2051,46 @@
       },
     },
   
+      // Arrow icon folder
+    {
+      "class": "icon_folder",
+      "settings": ["material_theme_arrow_folders", "material_theme_accent_lime"],
+      "layer2.texture": "Material Theme/assets/accent-lime/arrow_folder--hover.png",
+      "layer2.opacity": 0.0,
+      "layer3.texture": "Material Theme/assets/accent-lime/arrow_folder--opened.png",
+      "layer3.opacity": 0.0
+    },
+  
+    {
+      "class": "icon_folder",
+      "settings": ["material_theme_arrow_folders", "material_theme_accent_lime"],
+      "parents":
+      [{ "class": "tree_row", "attributes": ["expanded"] }],
+      "layer1.opacity": 0.0,
+      "layer2.opacity": 0.0,
+      "layer3.opacity": 1.0
+    },
+  
+    {
+      "class": "icon_folder",
+      "settings": ["material_theme_arrow_folders", "material_theme_accent_lime"],
+      "parents":
+      [ { "class": "tree_row", "attributes": ["hover"] }],
+      "layer1.opacity": 0.0,
+      "layer2.opacity": 1.0,
+      "layer3.opacity": 0.0
+    },
+  
+    {
+      "class": "icon_folder",
+      "settings": ["material_theme_arrow_folders", "material_theme_accent_lime"],
+      "parents":
+      [ { "class": "tree_row", "attributes": ["expanded", "hover"] }],
+      "layer1.opacity": 0.0,
+      "layer2.opacity": 0.0,
+      "layer3.opacity": 1.0
+    },
+  
       // tab set scroll left | scroll right
   
     {
@@ -1667,13 +2151,6 @@
     },
   
       // Panels data / score
-  
-    {
-      "class": "quick_panel_score_label",
-      "settings": ["material_theme_accent_lime"],
-      "fg": [124, 179, 66],
-      "selected_fg": [255, 255, 255, 255]
-    },
   
     {
       "class": "show_tabs_dropdown_button",
@@ -1772,6 +2249,31 @@
       "layer0.texture": "Material Theme/assets/accent-lime/find_reverse--hover.png",
     },
   
+      // Minimap
+  
+    {
+      "class": "minimap_control",
+      "settings": ["material_theme_accent_lime"],
+      "viewport_color": [124, 179, 66, 60]
+    },
+  
+      // Scrollbars
+  
+    {
+      "class": "puck_control",
+      "settings": ["material_theme_accent_scrollbars", "material_theme_accent_lime"],
+      "layer1.texture": "Material Theme/assets/accent-lime/thumb_vertical.png",
+      "layer1.opacity": 0.8
+    },
+  
+    {
+      "class": "puck_control",
+      "attributes": ["horizontal"],
+      "settings": ["material_theme_accent_scrollbars", "material_theme_accent_lime"],
+      "layer1.texture": "Material Theme/assets/accent-lime/thumb_horizontal.png",
+      "layer1.opacity": 0.8
+    },
+  
   // Purple Accent Color
   // ===========================================================================
   
@@ -1817,6 +2319,13 @@
       "layer1.texture": "Material Theme/assets/accent-purple/tree_highlight.png",
     },
   
+    {
+      "class": "tree_row",
+      "settings": ["material_theme_accent_purple", "material_theme_bullet_tree_indicator"],
+      "layer1.texture": "Material Theme/assets/accent-purple/tree_highlight--bullet.png",
+      "layer1.inner_margin": [22, 16, 0, 0]
+    },
+  
       // Tabs
   
     {
@@ -1849,6 +2358,13 @@
       "attributes": ["dirty"],
       "settings": ["material_theme_accent_purple"],
       "layer0.texture": "Material Theme/assets/accent-purple/dirty_icon--hover.png",
+    },
+  
+    {
+      "class": "sidebar_label",
+      "settings": ["material_theme_accent_purple"],
+      "parents": [{"class": "tree_row", "attributes": ["selected"]}],
+      "color": [171, 71, 188]
     },
   
     {
@@ -1915,6 +2431,46 @@
       },
     },
   
+      // Arrow icon folder
+    {
+      "class": "icon_folder",
+      "settings": ["material_theme_arrow_folders", "material_theme_accent_purple"],
+      "layer2.texture": "Material Theme/assets/accent-purple/arrow_folder--hover.png",
+      "layer2.opacity": 0.0,
+      "layer3.texture": "Material Theme/assets/accent-purple/arrow_folder--opened.png",
+      "layer3.opacity": 0.0
+    },
+  
+    {
+      "class": "icon_folder",
+      "settings": ["material_theme_arrow_folders", "material_theme_accent_purple"],
+      "parents":
+      [{ "class": "tree_row", "attributes": ["expanded"] }],
+      "layer1.opacity": 0.0,
+      "layer2.opacity": 0.0,
+      "layer3.opacity": 1.0
+    },
+  
+    {
+      "class": "icon_folder",
+      "settings": ["material_theme_arrow_folders", "material_theme_accent_purple"],
+      "parents":
+      [ { "class": "tree_row", "attributes": ["hover"] }],
+      "layer1.opacity": 0.0,
+      "layer2.opacity": 1.0,
+      "layer3.opacity": 0.0
+    },
+  
+    {
+      "class": "icon_folder",
+      "settings": ["material_theme_arrow_folders", "material_theme_accent_purple"],
+      "parents":
+      [ { "class": "tree_row", "attributes": ["expanded", "hover"] }],
+      "layer1.opacity": 0.0,
+      "layer2.opacity": 0.0,
+      "layer3.opacity": 1.0
+    },
+  
       // tab set scroll left | scroll right
   
     {
@@ -1975,13 +2531,6 @@
     },
   
       // Panels data / score
-  
-    {
-      "class": "quick_panel_score_label",
-      "settings": ["material_theme_accent_purple"],
-      "fg": [171, 71, 188],
-      "selected_fg": [255, 255, 255, 255]
-    },
   
     {
       "class": "show_tabs_dropdown_button",
@@ -2080,6 +2629,31 @@
       "layer0.texture": "Material Theme/assets/accent-purple/find_reverse--hover.png",
     },
   
+      // Minimap
+  
+    {
+      "class": "minimap_control",
+      "settings": ["material_theme_accent_purple"],
+      "viewport_color": [171, 71, 188, 60]
+    },
+  
+      // Scrollbars
+  
+    {
+      "class": "puck_control",
+      "settings": ["material_theme_accent_scrollbars", "material_theme_accent_purple"],
+      "layer1.texture": "Material Theme/assets/accent-purple/thumb_vertical.png",
+      "layer1.opacity": 0.8
+    },
+  
+    {
+      "class": "puck_control",
+      "attributes": ["horizontal"],
+      "settings": ["material_theme_accent_scrollbars", "material_theme_accent_purple"],
+      "layer1.texture": "Material Theme/assets/accent-purple/thumb_horizontal.png",
+      "layer1.opacity": 0.8
+    },
+  
   // Red Accent Color
   // ===========================================================================
   
@@ -2125,6 +2699,13 @@
       "layer1.texture": "Material Theme/assets/accent-red/tree_highlight.png",
     },
   
+    {
+      "class": "tree_row",
+      "settings": ["material_theme_accent_red", "material_theme_bullet_tree_indicator"],
+      "layer1.texture": "Material Theme/assets/accent-red/tree_highlight--bullet.png",
+      "layer1.inner_margin": [22, 16, 0, 0]
+    },
+  
       // Tabs
   
     {
@@ -2157,6 +2738,13 @@
       "attributes": ["dirty"],
       "settings": ["material_theme_accent_red"],
       "layer0.texture": "Material Theme/assets/accent-red/dirty_icon--hover.png",
+    },
+  
+    {
+      "class": "sidebar_label",
+      "settings": ["material_theme_accent_red"],
+      "parents": [{"class": "tree_row", "attributes": ["selected"]}],
+      "color": [229, 115, 115]
     },
   
     {
@@ -2223,6 +2811,46 @@
       },
     },
   
+      // Arrow icon folder
+    {
+      "class": "icon_folder",
+      "settings": ["material_theme_arrow_folders", "material_theme_accent_red"],
+      "layer2.texture": "Material Theme/assets/accent-red/arrow_folder--hover.png",
+      "layer2.opacity": 0.0,
+      "layer3.texture": "Material Theme/assets/accent-red/arrow_folder--opened.png",
+      "layer3.opacity": 0.0
+    },
+  
+    {
+      "class": "icon_folder",
+      "settings": ["material_theme_arrow_folders", "material_theme_accent_red"],
+      "parents":
+      [{ "class": "tree_row", "attributes": ["expanded"] }],
+      "layer1.opacity": 0.0,
+      "layer2.opacity": 0.0,
+      "layer3.opacity": 1.0
+    },
+  
+    {
+      "class": "icon_folder",
+      "settings": ["material_theme_arrow_folders", "material_theme_accent_red"],
+      "parents":
+      [ { "class": "tree_row", "attributes": ["hover"] }],
+      "layer1.opacity": 0.0,
+      "layer2.opacity": 1.0,
+      "layer3.opacity": 0.0
+    },
+  
+    {
+      "class": "icon_folder",
+      "settings": ["material_theme_arrow_folders", "material_theme_accent_red"],
+      "parents":
+      [ { "class": "tree_row", "attributes": ["expanded", "hover"] }],
+      "layer1.opacity": 0.0,
+      "layer2.opacity": 0.0,
+      "layer3.opacity": 1.0
+    },
+  
       // tab set scroll left | scroll right
   
     {
@@ -2283,13 +2911,6 @@
     },
   
       // Panels data / score
-  
-    {
-      "class": "quick_panel_score_label",
-      "settings": ["material_theme_accent_red"],
-      "fg": [229, 115, 115],
-      "selected_fg": [255, 255, 255, 255]
-    },
   
     {
       "class": "show_tabs_dropdown_button",
@@ -2388,6 +3009,31 @@
       "layer0.texture": "Material Theme/assets/accent-red/find_reverse--hover.png",
     },
   
+      // Minimap
+  
+    {
+      "class": "minimap_control",
+      "settings": ["material_theme_accent_red"],
+      "viewport_color": [229, 115, 115, 60]
+    },
+  
+      // Scrollbars
+  
+    {
+      "class": "puck_control",
+      "settings": ["material_theme_accent_scrollbars", "material_theme_accent_red"],
+      "layer1.texture": "Material Theme/assets/accent-red/thumb_vertical.png",
+      "layer1.opacity": 0.8
+    },
+  
+    {
+      "class": "puck_control",
+      "attributes": ["horizontal"],
+      "settings": ["material_theme_accent_scrollbars", "material_theme_accent_red"],
+      "layer1.texture": "Material Theme/assets/accent-red/thumb_horizontal.png",
+      "layer1.opacity": 0.8
+    },
+  
   // Orange Accent Color
   // ===========================================================================
   
@@ -2433,6 +3079,13 @@
       "layer1.texture": "Material Theme/assets/accent-orange/tree_highlight.png",
     },
   
+    {
+      "class": "tree_row",
+      "settings": ["material_theme_accent_orange", "material_theme_bullet_tree_indicator"],
+      "layer1.texture": "Material Theme/assets/accent-orange/tree_highlight--bullet.png",
+      "layer1.inner_margin": [22, 16, 0, 0]
+    },
+  
       // Tabs
   
     {
@@ -2465,6 +3118,13 @@
       "attributes": ["dirty"],
       "settings": ["material_theme_accent_orange"],
       "layer0.texture": "Material Theme/assets/accent-orange/dirty_icon--hover.png",
+    },
+  
+    {
+      "class": "sidebar_label",
+      "settings": ["material_theme_accent_orange"],
+      "parents": [{"class": "tree_row", "attributes": ["selected"]}],
+      "color": [255, 112, 66]
     },
   
     {
@@ -2531,6 +3191,46 @@
       },
     },
   
+      // Arrow icon folder
+    {
+      "class": "icon_folder",
+      "settings": ["material_theme_arrow_folders", "material_theme_accent_orange"],
+      "layer2.texture": "Material Theme/assets/accent-orange/arrow_folder--hover.png",
+      "layer2.opacity": 0.0,
+      "layer3.texture": "Material Theme/assets/accent-orange/arrow_folder--opened.png",
+      "layer3.opacity": 0.0
+    },
+  
+    {
+      "class": "icon_folder",
+      "settings": ["material_theme_arrow_folders", "material_theme_accent_orange"],
+      "parents":
+      [{ "class": "tree_row", "attributes": ["expanded"] }],
+      "layer1.opacity": 0.0,
+      "layer2.opacity": 0.0,
+      "layer3.opacity": 1.0
+    },
+  
+    {
+      "class": "icon_folder",
+      "settings": ["material_theme_arrow_folders", "material_theme_accent_orange"],
+      "parents":
+      [ { "class": "tree_row", "attributes": ["hover"] }],
+      "layer1.opacity": 0.0,
+      "layer2.opacity": 1.0,
+      "layer3.opacity": 0.0
+    },
+  
+    {
+      "class": "icon_folder",
+      "settings": ["material_theme_arrow_folders", "material_theme_accent_orange"],
+      "parents":
+      [ { "class": "tree_row", "attributes": ["expanded", "hover"] }],
+      "layer1.opacity": 0.0,
+      "layer2.opacity": 0.0,
+      "layer3.opacity": 1.0
+    },
+  
       // tab set scroll left | scroll right
   
     {
@@ -2591,13 +3291,6 @@
     },
   
       // Panels data / score
-  
-    {
-      "class": "quick_panel_score_label",
-      "settings": ["material_theme_accent_orange"],
-      "fg": [255, 112, 66],
-      "selected_fg": [255, 255, 255, 255]
-    },
   
     {
       "class": "show_tabs_dropdown_button",
@@ -2696,6 +3389,31 @@
       "layer0.texture": "Material Theme/assets/accent-orange/find_reverse--hover.png",
     },
   
+      // Minimap
+  
+    {
+      "class": "minimap_control",
+      "settings": ["material_theme_accent_orange"],
+      "viewport_color": [255, 112, 66, 60]
+    },
+  
+      // Scrollbars
+  
+    {
+      "class": "puck_control",
+      "settings": ["material_theme_accent_scrollbars", "material_theme_accent_orange"],
+      "layer1.texture": "Material Theme/assets/accent-orange/thumb_vertical.png",
+      "layer1.opacity": 0.8
+    },
+  
+    {
+      "class": "puck_control",
+      "attributes": ["horizontal"],
+      "settings": ["material_theme_accent_scrollbars", "material_theme_accent_orange"],
+      "layer1.texture": "Material Theme/assets/accent-orange/thumb_horizontal.png",
+      "layer1.opacity": 0.8
+    },
+  
   // Yellow Accent Color
   // ===========================================================================
   
@@ -2741,6 +3459,13 @@
       "layer1.texture": "Material Theme/assets/accent-yellow/tree_highlight.png",
     },
   
+    {
+      "class": "tree_row",
+      "settings": ["material_theme_accent_yellow", "material_theme_bullet_tree_indicator"],
+      "layer1.texture": "Material Theme/assets/accent-yellow/tree_highlight--bullet.png",
+      "layer1.inner_margin": [22, 16, 0, 0]
+    },
+  
       // Tabs
   
     {
@@ -2773,6 +3498,13 @@
       "attributes": ["dirty"],
       "settings": ["material_theme_accent_yellow"],
       "layer0.texture": "Material Theme/assets/accent-yellow/dirty_icon--hover.png",
+    },
+  
+    {
+      "class": "sidebar_label",
+      "settings": ["material_theme_accent_yellow"],
+      "parents": [{"class": "tree_row", "attributes": ["selected"]}],
+      "color": [255, 160, 0]
     },
   
     {
@@ -2839,6 +3571,46 @@
       },
     },
   
+      // Arrow icon folder
+    {
+      "class": "icon_folder",
+      "settings": ["material_theme_arrow_folders", "material_theme_accent_yellow"],
+      "layer2.texture": "Material Theme/assets/accent-yellow/arrow_folder--hover.png",
+      "layer2.opacity": 0.0,
+      "layer3.texture": "Material Theme/assets/accent-yellow/arrow_folder--opened.png",
+      "layer3.opacity": 0.0
+    },
+  
+    {
+      "class": "icon_folder",
+      "settings": ["material_theme_arrow_folders", "material_theme_accent_yellow"],
+      "parents":
+      [{ "class": "tree_row", "attributes": ["expanded"] }],
+      "layer1.opacity": 0.0,
+      "layer2.opacity": 0.0,
+      "layer3.opacity": 1.0
+    },
+  
+    {
+      "class": "icon_folder",
+      "settings": ["material_theme_arrow_folders", "material_theme_accent_yellow"],
+      "parents":
+      [ { "class": "tree_row", "attributes": ["hover"] }],
+      "layer1.opacity": 0.0,
+      "layer2.opacity": 1.0,
+      "layer3.opacity": 0.0
+    },
+  
+    {
+      "class": "icon_folder",
+      "settings": ["material_theme_arrow_folders", "material_theme_accent_yellow"],
+      "parents":
+      [ { "class": "tree_row", "attributes": ["expanded", "hover"] }],
+      "layer1.opacity": 0.0,
+      "layer2.opacity": 0.0,
+      "layer3.opacity": 1.0
+    },
+  
       // tab set scroll left | scroll right
   
     {
@@ -2899,13 +3671,6 @@
     },
   
       // Panels data / score
-  
-    {
-      "class": "quick_panel_score_label",
-      "settings": ["material_theme_accent_yellow"],
-      "fg": [255, 160, 0],
-      "selected_fg": [255, 255, 255, 255]
-    },
   
     {
       "class": "show_tabs_dropdown_button",
@@ -3004,6 +3769,31 @@
       "layer0.texture": "Material Theme/assets/accent-yellow/find_reverse--hover.png",
     },
   
+      // Minimap
+  
+    {
+      "class": "minimap_control",
+      "settings": ["material_theme_accent_yellow"],
+      "viewport_color": [255, 160, 0, 60]
+    },
+  
+      // Scrollbars
+  
+    {
+      "class": "puck_control",
+      "settings": ["material_theme_accent_scrollbars", "material_theme_accent_yellow"],
+      "layer1.texture": "Material Theme/assets/accent-yellow/thumb_vertical.png",
+      "layer1.opacity": 0.8
+    },
+  
+    {
+      "class": "puck_control",
+      "attributes": ["horizontal"],
+      "settings": ["material_theme_accent_scrollbars", "material_theme_accent_yellow"],
+      "layer1.texture": "Material Theme/assets/accent-yellow/thumb_horizontal.png",
+      "layer1.opacity": 0.8
+    },
+  
   // Indigo Accent Color
   // ===========================================================================
   
@@ -3049,6 +3839,13 @@
       "layer1.texture": "Material Theme/assets/accent-indigo/tree_highlight.png",
     },
   
+    {
+      "class": "tree_row",
+      "settings": ["material_theme_accent_indigo", "material_theme_bullet_tree_indicator"],
+      "layer1.texture": "Material Theme/assets/accent-indigo/tree_highlight--bullet.png",
+      "layer1.inner_margin": [22, 16, 0, 0]
+    },
+  
       // Tabs
   
     {
@@ -3081,6 +3878,13 @@
       "attributes": ["dirty"],
       "settings": ["material_theme_accent_indigo"],
       "layer0.texture": "Material Theme/assets/accent-indigo/dirty_icon--hover.png",
+    },
+  
+    {
+      "class": "sidebar_label",
+      "settings": ["material_theme_accent_indigo"],
+      "parents": [{"class": "tree_row", "attributes": ["selected"]}],
+      "color": [92, 107, 192]
     },
   
     {
@@ -3147,6 +3951,46 @@
       },
     },
   
+      // Arrow icon folder
+    {
+      "class": "icon_folder",
+      "settings": ["material_theme_arrow_folders", "material_theme_accent_indigo"],
+      "layer2.texture": "Material Theme/assets/accent-indigo/arrow_folder--hover.png",
+      "layer2.opacity": 0.0,
+      "layer3.texture": "Material Theme/assets/accent-indigo/arrow_folder--opened.png",
+      "layer3.opacity": 0.0
+    },
+  
+    {
+      "class": "icon_folder",
+      "settings": ["material_theme_arrow_folders", "material_theme_accent_indigo"],
+      "parents":
+      [{ "class": "tree_row", "attributes": ["expanded"] }],
+      "layer1.opacity": 0.0,
+      "layer2.opacity": 0.0,
+      "layer3.opacity": 1.0
+    },
+  
+    {
+      "class": "icon_folder",
+      "settings": ["material_theme_arrow_folders", "material_theme_accent_indigo"],
+      "parents":
+      [ { "class": "tree_row", "attributes": ["hover"] }],
+      "layer1.opacity": 0.0,
+      "layer2.opacity": 1.0,
+      "layer3.opacity": 0.0
+    },
+  
+    {
+      "class": "icon_folder",
+      "settings": ["material_theme_arrow_folders", "material_theme_accent_indigo"],
+      "parents":
+      [ { "class": "tree_row", "attributes": ["expanded", "hover"] }],
+      "layer1.opacity": 0.0,
+      "layer2.opacity": 0.0,
+      "layer3.opacity": 1.0
+    },
+  
       // tab set scroll left | scroll right
   
     {
@@ -3207,13 +4051,6 @@
     },
   
       // Panels data / score
-  
-    {
-      "class": "quick_panel_score_label",
-      "settings": ["material_theme_accent_indigo"],
-      "fg": [92, 107, 192],
-      "selected_fg": [255, 255, 255, 255]
-    },
   
     {
       "class": "show_tabs_dropdown_button",
@@ -3312,6 +4149,31 @@
       "layer0.texture": "Material Theme/assets/accent-indigo/find_reverse--hover.png",
     },
   
+      // Minimap
+  
+    {
+      "class": "minimap_control",
+      "settings": ["material_theme_accent_indigo"],
+      "viewport_color": [92, 107, 192, 60]
+    },
+  
+      // Scrollbars
+  
+    {
+      "class": "puck_control",
+      "settings": ["material_theme_accent_scrollbars", "material_theme_accent_indigo"],
+      "layer1.texture": "Material Theme/assets/accent-indigo/thumb_vertical.png",
+      "layer1.opacity": 0.8
+    },
+  
+    {
+      "class": "puck_control",
+      "attributes": ["horizontal"],
+      "settings": ["material_theme_accent_scrollbars", "material_theme_accent_indigo"],
+      "layer1.texture": "Material Theme/assets/accent-indigo/thumb_horizontal.png",
+      "layer1.opacity": 0.8
+    },
+  
   // Pink Accent Color
   // ===========================================================================
   
@@ -3357,6 +4219,13 @@
       "layer1.texture": "Material Theme/assets/accent-pink/tree_highlight.png",
     },
   
+    {
+      "class": "tree_row",
+      "settings": ["material_theme_accent_pink", "material_theme_bullet_tree_indicator"],
+      "layer1.texture": "Material Theme/assets/accent-pink/tree_highlight--bullet.png",
+      "layer1.inner_margin": [22, 16, 0, 0]
+    },
+  
       // Tabs
   
     {
@@ -3389,6 +4258,13 @@
       "attributes": ["dirty"],
       "settings": ["material_theme_accent_pink"],
       "layer0.texture": "Material Theme/assets/accent-pink/dirty_icon--hover.png",
+    },
+  
+    {
+      "class": "sidebar_label",
+      "settings": ["material_theme_accent_pink"],
+      "parents": [{"class": "tree_row", "attributes": ["selected"]}],
+      "color": [255, 64, 129]
     },
   
     {
@@ -3455,6 +4331,46 @@
       },
     },
   
+      // Arrow icon folder
+    {
+      "class": "icon_folder",
+      "settings": ["material_theme_arrow_folders", "material_theme_accent_pink"],
+      "layer2.texture": "Material Theme/assets/accent-pink/arrow_folder--hover.png",
+      "layer2.opacity": 0.0,
+      "layer3.texture": "Material Theme/assets/accent-pink/arrow_folder--opened.png",
+      "layer3.opacity": 0.0
+    },
+  
+    {
+      "class": "icon_folder",
+      "settings": ["material_theme_arrow_folders", "material_theme_accent_pink"],
+      "parents":
+      [{ "class": "tree_row", "attributes": ["expanded"] }],
+      "layer1.opacity": 0.0,
+      "layer2.opacity": 0.0,
+      "layer3.opacity": 1.0
+    },
+  
+    {
+      "class": "icon_folder",
+      "settings": ["material_theme_arrow_folders", "material_theme_accent_pink"],
+      "parents":
+      [ { "class": "tree_row", "attributes": ["hover"] }],
+      "layer1.opacity": 0.0,
+      "layer2.opacity": 1.0,
+      "layer3.opacity": 0.0
+    },
+  
+    {
+      "class": "icon_folder",
+      "settings": ["material_theme_arrow_folders", "material_theme_accent_pink"],
+      "parents":
+      [ { "class": "tree_row", "attributes": ["expanded", "hover"] }],
+      "layer1.opacity": 0.0,
+      "layer2.opacity": 0.0,
+      "layer3.opacity": 1.0
+    },
+  
       // tab set scroll left | scroll right
   
     {
@@ -3515,13 +4431,6 @@
     },
   
       // Panels data / score
-  
-    {
-      "class": "quick_panel_score_label",
-      "settings": ["material_theme_accent_pink"],
-      "fg": [255, 64, 129],
-      "selected_fg": [255, 255, 255, 255]
-    },
   
     {
       "class": "show_tabs_dropdown_button",
@@ -3620,6 +4529,31 @@
       "layer0.texture": "Material Theme/assets/accent-pink/find_reverse--hover.png",
     },
   
+      // Minimap
+  
+    {
+      "class": "minimap_control",
+      "settings": ["material_theme_accent_pink"],
+      "viewport_color": [255, 64, 129, 60]
+    },
+  
+      // Scrollbars
+  
+    {
+      "class": "puck_control",
+      "settings": ["material_theme_accent_scrollbars", "material_theme_accent_pink"],
+      "layer1.texture": "Material Theme/assets/accent-pink/thumb_vertical.png",
+      "layer1.opacity": 0.8
+    },
+  
+    {
+      "class": "puck_control",
+      "attributes": ["horizontal"],
+      "settings": ["material_theme_accent_scrollbars", "material_theme_accent_pink"],
+      "layer1.texture": "Material Theme/assets/accent-pink/thumb_horizontal.png",
+      "layer1.opacity": 0.8
+    },
+  
   // Blue Accent Color
   // ===========================================================================
   
@@ -3665,6 +4599,13 @@
       "layer1.texture": "Material Theme/assets/accent-blue/tree_highlight.png",
     },
   
+    {
+      "class": "tree_row",
+      "settings": ["material_theme_accent_blue", "material_theme_bullet_tree_indicator"],
+      "layer1.texture": "Material Theme/assets/accent-blue/tree_highlight--bullet.png",
+      "layer1.inner_margin": [22, 16, 0, 0]
+    },
+  
       // Tabs
   
     {
@@ -3697,6 +4638,13 @@
       "attributes": ["dirty"],
       "settings": ["material_theme_accent_blue"],
       "layer0.texture": "Material Theme/assets/accent-blue/dirty_icon--hover.png",
+    },
+  
+    {
+      "class": "sidebar_label",
+      "settings": ["material_theme_accent_blue"],
+      "parents": [{"class": "tree_row", "attributes": ["selected"]}],
+      "color": [41, 121, 255]
     },
   
     {
@@ -3763,6 +4711,46 @@
       },
     },
   
+      // Arrow icon folder
+    {
+      "class": "icon_folder",
+      "settings": ["material_theme_arrow_folders", "material_theme_accent_blue"],
+      "layer2.texture": "Material Theme/assets/accent-blue/arrow_folder--hover.png",
+      "layer2.opacity": 0.0,
+      "layer3.texture": "Material Theme/assets/accent-blue/arrow_folder--opened.png",
+      "layer3.opacity": 0.0
+    },
+  
+    {
+      "class": "icon_folder",
+      "settings": ["material_theme_arrow_folders", "material_theme_accent_blue"],
+      "parents":
+      [{ "class": "tree_row", "attributes": ["expanded"] }],
+      "layer1.opacity": 0.0,
+      "layer2.opacity": 0.0,
+      "layer3.opacity": 1.0
+    },
+  
+    {
+      "class": "icon_folder",
+      "settings": ["material_theme_arrow_folders", "material_theme_accent_blue"],
+      "parents":
+      [ { "class": "tree_row", "attributes": ["hover"] }],
+      "layer1.opacity": 0.0,
+      "layer2.opacity": 1.0,
+      "layer3.opacity": 0.0
+    },
+  
+    {
+      "class": "icon_folder",
+      "settings": ["material_theme_arrow_folders", "material_theme_accent_blue"],
+      "parents":
+      [ { "class": "tree_row", "attributes": ["expanded", "hover"] }],
+      "layer1.opacity": 0.0,
+      "layer2.opacity": 0.0,
+      "layer3.opacity": 1.0
+    },
+  
       // tab set scroll left | scroll right
   
     {
@@ -3823,13 +4811,6 @@
     },
   
       // Panels data / score
-  
-    {
-      "class": "quick_panel_score_label",
-      "settings": ["material_theme_accent_blue"],
-      "fg": [41, 121, 255],
-      "selected_fg": [255, 255, 255, 255]
-    },
   
     {
       "class": "show_tabs_dropdown_button",
@@ -3928,6 +4909,31 @@
       "layer0.texture": "Material Theme/assets/accent-blue/find_reverse--hover.png",
     },
   
+      // Minimap
+  
+    {
+      "class": "minimap_control",
+      "settings": ["material_theme_accent_blue"],
+      "viewport_color": [41, 121, 255, 60]
+    },
+  
+      // Scrollbars
+  
+    {
+      "class": "puck_control",
+      "settings": ["material_theme_accent_scrollbars", "material_theme_accent_blue"],
+      "layer1.texture": "Material Theme/assets/accent-blue/thumb_vertical.png",
+      "layer1.opacity": 0.8
+    },
+  
+    {
+      "class": "puck_control",
+      "attributes": ["horizontal"],
+      "settings": ["material_theme_accent_scrollbars", "material_theme_accent_blue"],
+      "layer1.texture": "Material Theme/assets/accent-blue/thumb_horizontal.png",
+      "layer1.opacity": 0.8
+    },
+  
   // Cyan Accent Color
   // ===========================================================================
   
@@ -3973,6 +4979,13 @@
       "layer1.texture": "Material Theme/assets/accent-cyan/tree_highlight.png",
     },
   
+    {
+      "class": "tree_row",
+      "settings": ["material_theme_accent_cyan", "material_theme_bullet_tree_indicator"],
+      "layer1.texture": "Material Theme/assets/accent-cyan/tree_highlight--bullet.png",
+      "layer1.inner_margin": [22, 16, 0, 0]
+    },
+  
       // Tabs
   
     {
@@ -4005,6 +5018,13 @@
       "attributes": ["dirty"],
       "settings": ["material_theme_accent_cyan"],
       "layer0.texture": "Material Theme/assets/accent-cyan/dirty_icon--hover.png",
+    },
+  
+    {
+      "class": "sidebar_label",
+      "settings": ["material_theme_accent_cyan"],
+      "parents": [{"class": "tree_row", "attributes": ["selected"]}],
+      "color": [0, 188, 212]
     },
   
     {
@@ -4071,6 +5091,46 @@
       },
     },
   
+      // Arrow icon folder
+    {
+      "class": "icon_folder",
+      "settings": ["material_theme_arrow_folders", "material_theme_accent_cyan"],
+      "layer2.texture": "Material Theme/assets/accent-cyan/arrow_folder--hover.png",
+      "layer2.opacity": 0.0,
+      "layer3.texture": "Material Theme/assets/accent-cyan/arrow_folder--opened.png",
+      "layer3.opacity": 0.0
+    },
+  
+    {
+      "class": "icon_folder",
+      "settings": ["material_theme_arrow_folders", "material_theme_accent_cyan"],
+      "parents":
+      [{ "class": "tree_row", "attributes": ["expanded"] }],
+      "layer1.opacity": 0.0,
+      "layer2.opacity": 0.0,
+      "layer3.opacity": 1.0
+    },
+  
+    {
+      "class": "icon_folder",
+      "settings": ["material_theme_arrow_folders", "material_theme_accent_cyan"],
+      "parents":
+      [ { "class": "tree_row", "attributes": ["hover"] }],
+      "layer1.opacity": 0.0,
+      "layer2.opacity": 1.0,
+      "layer3.opacity": 0.0
+    },
+  
+    {
+      "class": "icon_folder",
+      "settings": ["material_theme_arrow_folders", "material_theme_accent_cyan"],
+      "parents":
+      [ { "class": "tree_row", "attributes": ["expanded", "hover"] }],
+      "layer1.opacity": 0.0,
+      "layer2.opacity": 0.0,
+      "layer3.opacity": 1.0
+    },
+  
       // tab set scroll left | scroll right
   
     {
@@ -4131,13 +5191,6 @@
     },
   
       // Panels data / score
-  
-    {
-      "class": "quick_panel_score_label",
-      "settings": ["material_theme_accent_cyan"],
-      "fg": [0, 188, 212],
-      "selected_fg": [255, 255, 255, 255]
-    },
   
     {
       "class": "show_tabs_dropdown_button",
@@ -4236,6 +5289,31 @@
       "layer0.texture": "Material Theme/assets/accent-cyan/find_reverse--hover.png",
     },
   
+      // Minimap
+  
+    {
+      "class": "minimap_control",
+      "settings": ["material_theme_accent_cyan"],
+      "viewport_color": [0, 188, 212, 60]
+    },
+  
+      // Scrollbars
+  
+    {
+      "class": "puck_control",
+      "settings": ["material_theme_accent_scrollbars", "material_theme_accent_cyan"],
+      "layer1.texture": "Material Theme/assets/accent-cyan/thumb_vertical.png",
+      "layer1.opacity": 0.8
+    },
+  
+    {
+      "class": "puck_control",
+      "attributes": ["horizontal"],
+      "settings": ["material_theme_accent_scrollbars", "material_theme_accent_cyan"],
+      "layer1.texture": "Material Theme/assets/accent-cyan/thumb_horizontal.png",
+      "layer1.opacity": 0.8
+    },
+  
   // Bright Teal Accent Color
   // ===========================================================================
   
@@ -4281,6 +5359,13 @@
       "layer1.texture": "Material Theme/assets/accent-bright-teal/tree_highlight.png",
     },
   
+    {
+      "class": "tree_row",
+      "settings": ["material_theme_accent_bright-teal", "material_theme_bullet_tree_indicator"],
+      "layer1.texture": "Material Theme/assets/accent-bright-teal/tree_highlight--bullet.png",
+      "layer1.inner_margin": [22, 16, 0, 0]
+    },
+  
       // Tabs
   
     {
@@ -4313,6 +5398,13 @@
       "attributes": ["dirty"],
       "settings": ["material_theme_accent_bright-teal"],
       "layer0.texture": "Material Theme/assets/accent-bright-teal/dirty_icon--hover.png",
+    },
+  
+    {
+      "class": "sidebar_label",
+      "settings": ["material_theme_accent_bright-teal"],
+      "parents": [{"class": "tree_row", "attributes": ["selected"]}],
+      "color": [100, 255, 218]
     },
   
     {
@@ -4379,6 +5471,46 @@
       },
     },
   
+      // Arrow icon folder
+    {
+      "class": "icon_folder",
+      "settings": ["material_theme_arrow_folders", "material_theme_accent_bright-teal"],
+      "layer2.texture": "Material Theme/assets/accent-bright-teal/arrow_folder--hover.png",
+      "layer2.opacity": 0.0,
+      "layer3.texture": "Material Theme/assets/accent-bright-teal/arrow_folder--opened.png",
+      "layer3.opacity": 0.0
+    },
+  
+    {
+      "class": "icon_folder",
+      "settings": ["material_theme_arrow_folders", "material_theme_accent_bright-teal"],
+      "parents":
+      [{ "class": "tree_row", "attributes": ["expanded"] }],
+      "layer1.opacity": 0.0,
+      "layer2.opacity": 0.0,
+      "layer3.opacity": 1.0
+    },
+  
+    {
+      "class": "icon_folder",
+      "settings": ["material_theme_arrow_folders", "material_theme_accent_bright-teal"],
+      "parents":
+      [ { "class": "tree_row", "attributes": ["hover"] }],
+      "layer1.opacity": 0.0,
+      "layer2.opacity": 1.0,
+      "layer3.opacity": 0.0
+    },
+  
+    {
+      "class": "icon_folder",
+      "settings": ["material_theme_arrow_folders", "material_theme_accent_bright-teal"],
+      "parents":
+      [ { "class": "tree_row", "attributes": ["expanded", "hover"] }],
+      "layer1.opacity": 0.0,
+      "layer2.opacity": 0.0,
+      "layer3.opacity": 1.0
+    },
+  
       // tab set scroll left | scroll right
   
     {
@@ -4439,13 +5571,6 @@
     },
   
       // Panels data / score
-  
-    {
-      "class": "quick_panel_score_label",
-      "settings": ["material_theme_accent_bright-teal"],
-      "fg": [100, 255, 218],
-      "selected_fg": [255, 255, 255, 255]
-    },
   
     {
       "class": "show_tabs_dropdown_button",
@@ -4544,6 +5669,31 @@
       "layer0.texture": "Material Theme/assets/accent-bright-teal/find_reverse--hover.png",
     },
   
+      // Minimap
+  
+    {
+      "class": "minimap_control",
+      "settings": ["material_theme_accent_bright-teal"],
+      "viewport_color": [100, 255, 218, 60]
+    },
+  
+      // Scrollbars
+  
+    {
+      "class": "puck_control",
+      "settings": ["material_theme_accent_scrollbars", "material_theme_accent_bright-teal"],
+      "layer1.texture": "Material Theme/assets/accent-bright-teal/thumb_vertical.png",
+      "layer1.opacity": 0.8
+    },
+  
+    {
+      "class": "puck_control",
+      "attributes": ["horizontal"],
+      "settings": ["material_theme_accent_scrollbars", "material_theme_accent_bright-teal"],
+      "layer1.texture": "Material Theme/assets/accent-bright-teal/thumb_horizontal.png",
+      "layer1.opacity": 0.8
+    },
+  
   // Acid Lime Accent Color
   // ===========================================================================
   
@@ -4589,6 +5739,13 @@
       "layer1.texture": "Material Theme/assets/accent-acid-lime/tree_highlight.png",
     },
   
+    {
+      "class": "tree_row",
+      "settings": ["material_theme_accent_acid-lime", "material_theme_bullet_tree_indicator"],
+      "layer1.texture": "Material Theme/assets/accent-acid-lime/tree_highlight--bullet.png",
+      "layer1.inner_margin": [22, 16, 0, 0]
+    },
+  
       // Tabs
   
     {
@@ -4621,6 +5778,13 @@
       "attributes": ["dirty"],
       "settings": ["material_theme_accent_acid-lime"],
       "layer0.texture": "Material Theme/assets/accent-acid-lime/dirty_icon--hover.png",
+    },
+  
+    {
+      "class": "sidebar_label",
+      "settings": ["material_theme_accent_acid-lime"],
+      "parents": [{"class": "tree_row", "attributes": ["selected"]}],
+      "color": [198, 255, 0]
     },
   
     {
@@ -4687,6 +5851,46 @@
       },
     },
   
+      // Arrow icon folder
+    {
+      "class": "icon_folder",
+      "settings": ["material_theme_arrow_folders", "material_theme_accent_acid-lime"],
+      "layer2.texture": "Material Theme/assets/accent-acid-lime/arrow_folder--hover.png",
+      "layer2.opacity": 0.0,
+      "layer3.texture": "Material Theme/assets/accent-acid-lime/arrow_folder--opened.png",
+      "layer3.opacity": 0.0
+    },
+  
+    {
+      "class": "icon_folder",
+      "settings": ["material_theme_arrow_folders", "material_theme_accent_acid-lime"],
+      "parents":
+      [{ "class": "tree_row", "attributes": ["expanded"] }],
+      "layer1.opacity": 0.0,
+      "layer2.opacity": 0.0,
+      "layer3.opacity": 1.0
+    },
+  
+    {
+      "class": "icon_folder",
+      "settings": ["material_theme_arrow_folders", "material_theme_accent_acid-lime"],
+      "parents":
+      [ { "class": "tree_row", "attributes": ["hover"] }],
+      "layer1.opacity": 0.0,
+      "layer2.opacity": 1.0,
+      "layer3.opacity": 0.0
+    },
+  
+    {
+      "class": "icon_folder",
+      "settings": ["material_theme_arrow_folders", "material_theme_accent_acid-lime"],
+      "parents":
+      [ { "class": "tree_row", "attributes": ["expanded", "hover"] }],
+      "layer1.opacity": 0.0,
+      "layer2.opacity": 0.0,
+      "layer3.opacity": 1.0
+    },
+  
       // tab set scroll left | scroll right
   
     {
@@ -4747,13 +5951,6 @@
     },
   
       // Panels data / score
-  
-    {
-      "class": "quick_panel_score_label",
-      "settings": ["material_theme_accent_acid-lime"],
-      "fg": [198, 255, 0],
-      "selected_fg": [255, 255, 255, 255]
-    },
   
     {
       "class": "show_tabs_dropdown_button",
@@ -4852,6 +6049,31 @@
       "layer0.texture": "Material Theme/assets/accent-acid-lime/find_reverse--hover.png",
     },
   
+      // Minimap
+  
+    {
+      "class": "minimap_control",
+      "settings": ["material_theme_accent_acid-lime"],
+      "viewport_color": [198, 255, 0, 60]
+    },
+  
+      // Scrollbars
+  
+    {
+      "class": "puck_control",
+      "settings": ["material_theme_accent_scrollbars", "material_theme_accent_acid-lime"],
+      "layer1.texture": "Material Theme/assets/accent-acid-lime/thumb_vertical.png",
+      "layer1.opacity": 0.8
+    },
+  
+    {
+      "class": "puck_control",
+      "attributes": ["horizontal"],
+      "settings": ["material_theme_accent_scrollbars", "material_theme_accent_acid-lime"],
+      "layer1.texture": "Material Theme/assets/accent-acid-lime/thumb_horizontal.png",
+      "layer1.opacity": 0.8
+    },
+  
   // Graphite Accent Color
   // ===========================================================================
   
@@ -4897,6 +6119,13 @@
       "layer1.texture": "Material Theme/assets/accent-graphite/tree_highlight.png",
     },
   
+    {
+      "class": "tree_row",
+      "settings": ["material_theme_accent_graphite", "material_theme_bullet_tree_indicator"],
+      "layer1.texture": "Material Theme/assets/accent-graphite/tree_highlight--bullet.png",
+      "layer1.inner_margin": [22, 16, 0, 0]
+    },
+  
       // Tabs
   
     {
@@ -4929,6 +6158,13 @@
       "attributes": ["dirty"],
       "settings": ["material_theme_accent_graphite"],
       "layer0.texture": "Material Theme/assets/accent-graphite/dirty_icon--hover.png",
+    },
+  
+    {
+      "class": "sidebar_label",
+      "settings": ["material_theme_accent_graphite"],
+      "parents": [{"class": "tree_row", "attributes": ["selected"]}],
+      "color": [97, 97, 97]
     },
   
     {
@@ -4995,6 +6231,46 @@
       },
     },
   
+      // Arrow icon folder
+    {
+      "class": "icon_folder",
+      "settings": ["material_theme_arrow_folders", "material_theme_accent_graphite"],
+      "layer2.texture": "Material Theme/assets/accent-graphite/arrow_folder--hover.png",
+      "layer2.opacity": 0.0,
+      "layer3.texture": "Material Theme/assets/accent-graphite/arrow_folder--opened.png",
+      "layer3.opacity": 0.0
+    },
+  
+    {
+      "class": "icon_folder",
+      "settings": ["material_theme_arrow_folders", "material_theme_accent_graphite"],
+      "parents":
+      [{ "class": "tree_row", "attributes": ["expanded"] }],
+      "layer1.opacity": 0.0,
+      "layer2.opacity": 0.0,
+      "layer3.opacity": 1.0
+    },
+  
+    {
+      "class": "icon_folder",
+      "settings": ["material_theme_arrow_folders", "material_theme_accent_graphite"],
+      "parents":
+      [ { "class": "tree_row", "attributes": ["hover"] }],
+      "layer1.opacity": 0.0,
+      "layer2.opacity": 1.0,
+      "layer3.opacity": 0.0
+    },
+  
+    {
+      "class": "icon_folder",
+      "settings": ["material_theme_arrow_folders", "material_theme_accent_graphite"],
+      "parents":
+      [ { "class": "tree_row", "attributes": ["expanded", "hover"] }],
+      "layer1.opacity": 0.0,
+      "layer2.opacity": 0.0,
+      "layer3.opacity": 1.0
+    },
+  
       // tab set scroll left | scroll right
   
     {
@@ -5055,13 +6331,6 @@
     },
   
       // Panels data / score
-  
-    {
-      "class": "quick_panel_score_label",
-      "settings": ["material_theme_accent_graphite"],
-      "fg": [97, 97, 97],
-      "selected_fg": [255, 255, 255, 255]
-    },
   
     {
       "class": "show_tabs_dropdown_button",
@@ -5160,6 +6429,31 @@
       "layer0.texture": "Material Theme/assets/accent-graphite/find_reverse--hover.png",
     },
   
+      // Minimap
+  
+    {
+      "class": "minimap_control",
+      "settings": ["material_theme_accent_graphite"],
+      "viewport_color": [97, 97, 97, 60]
+    },
+  
+      // Scrollbars
+  
+    {
+      "class": "puck_control",
+      "settings": ["material_theme_accent_scrollbars", "material_theme_accent_graphite"],
+      "layer1.texture": "Material Theme/assets/accent-graphite/thumb_vertical.png",
+      "layer1.opacity": 0.8
+    },
+  
+    {
+      "class": "puck_control",
+      "attributes": ["horizontal"],
+      "settings": ["material_theme_accent_scrollbars", "material_theme_accent_graphite"],
+      "layer1.texture": "Material Theme/assets/accent-graphite/thumb_horizontal.png",
+      "layer1.opacity": 0.8
+    },
+  
   // Breaking Bad Accent Color
   // ===========================================================================
   
@@ -5205,6 +6499,13 @@
       "layer1.texture": "Material Theme/assets/accent-brba/tree_highlight.png",
     },
   
+    {
+      "class": "tree_row",
+      "settings": ["material_theme_accent_brba", "material_theme_bullet_tree_indicator"],
+      "layer1.texture": "Material Theme/assets/accent-brba/tree_highlight--bullet.png",
+      "layer1.inner_margin": [22, 16, 0, 0]
+    },
+  
       // Tabs
   
     {
@@ -5237,6 +6538,13 @@
       "attributes": ["dirty"],
       "settings": ["material_theme_accent_brba"],
       "layer0.texture": "Material Theme/assets/accent-brba/dirty_icon--hover.png",
+    },
+  
+    {
+      "class": "sidebar_label",
+      "settings": ["material_theme_accent_brba"],
+      "parents": [{"class": "tree_row", "attributes": ["selected"]}],
+      "color": [56, 142, 60]
     },
   
     {
@@ -5303,6 +6611,46 @@
       },
     },
   
+      // Arrow icon folder
+    {
+      "class": "icon_folder",
+      "settings": ["material_theme_arrow_folders", "material_theme_accent_brba"],
+      "layer2.texture": "Material Theme/assets/accent-brba/arrow_folder--hover.png",
+      "layer2.opacity": 0.0,
+      "layer3.texture": "Material Theme/assets/accent-brba/arrow_folder--opened.png",
+      "layer3.opacity": 0.0
+    },
+  
+    {
+      "class": "icon_folder",
+      "settings": ["material_theme_arrow_folders", "material_theme_accent_brba"],
+      "parents":
+      [{ "class": "tree_row", "attributes": ["expanded"] }],
+      "layer1.opacity": 0.0,
+      "layer2.opacity": 0.0,
+      "layer3.opacity": 1.0
+    },
+  
+    {
+      "class": "icon_folder",
+      "settings": ["material_theme_arrow_folders", "material_theme_accent_brba"],
+      "parents":
+      [ { "class": "tree_row", "attributes": ["hover"] }],
+      "layer1.opacity": 0.0,
+      "layer2.opacity": 1.0,
+      "layer3.opacity": 0.0
+    },
+  
+    {
+      "class": "icon_folder",
+      "settings": ["material_theme_arrow_folders", "material_theme_accent_brba"],
+      "parents":
+      [ { "class": "tree_row", "attributes": ["expanded", "hover"] }],
+      "layer1.opacity": 0.0,
+      "layer2.opacity": 0.0,
+      "layer3.opacity": 1.0
+    },
+  
       // tab set scroll left | scroll right
   
     {
@@ -5363,13 +6711,6 @@
     },
   
       // Panels data / score
-  
-    {
-      "class": "quick_panel_score_label",
-      "settings": ["material_theme_accent_brba"],
-      "fg": [56, 142, 60],
-      "selected_fg": [255, 255, 255, 255]
-    },
   
     {
       "class": "show_tabs_dropdown_button",
@@ -5468,6 +6809,31 @@
       "layer0.texture": "Material Theme/assets/accent-brba/find_reverse--hover.png",
     },
   
+      // Minimap
+  
+    {
+      "class": "minimap_control",
+      "settings": ["material_theme_accent_brba"],
+      "viewport_color": [56, 142, 60, 60]
+    },
+  
+      // Scrollbars
+  
+    {
+      "class": "puck_control",
+      "settings": ["material_theme_accent_scrollbars", "material_theme_accent_brba"],
+      "layer1.texture": "Material Theme/assets/accent-brba/thumb_vertical.png",
+      "layer1.opacity": 0.8
+    },
+  
+    {
+      "class": "puck_control",
+      "attributes": ["horizontal"],
+      "settings": ["material_theme_accent_scrollbars", "material_theme_accent_brba"],
+      "layer1.texture": "Material Theme/assets/accent-brba/thumb_horizontal.png",
+      "layer1.opacity": 0.8
+    },
+  
   // Sky Accent Color
   // ===========================================================================
   
@@ -5513,6 +6879,13 @@
       "layer1.texture": "Material Theme/assets/accent-sky/tree_highlight.png",
     },
   
+    {
+      "class": "tree_row",
+      "settings": ["material_theme_accent_sky", "material_theme_bullet_tree_indicator"],
+      "layer1.texture": "Material Theme/assets/accent-sky/tree_highlight--bullet.png",
+      "layer1.inner_margin": [22, 16, 0, 0]
+    },
+  
       // Tabs
   
     {
@@ -5545,6 +6918,13 @@
       "attributes": ["dirty"],
       "settings": ["material_theme_accent_sky"],
       "layer0.texture": "Material Theme/assets/accent-sky/dirty_icon--hover.png",
+    },
+  
+    {
+      "class": "sidebar_label",
+      "settings": ["material_theme_accent_sky"],
+      "parents": [{"class": "tree_row", "attributes": ["selected"]}],
+      "color": [132, 255, 255]
     },
   
     {
@@ -5611,6 +6991,46 @@
       },
     },
   
+      // Arrow icon folder
+    {
+      "class": "icon_folder",
+      "settings": ["material_theme_arrow_folders", "material_theme_accent_sky"],
+      "layer2.texture": "Material Theme/assets/accent-sky/arrow_folder--hover.png",
+      "layer2.opacity": 0.0,
+      "layer3.texture": "Material Theme/assets/accent-sky/arrow_folder--opened.png",
+      "layer3.opacity": 0.0
+    },
+  
+    {
+      "class": "icon_folder",
+      "settings": ["material_theme_arrow_folders", "material_theme_accent_sky"],
+      "parents":
+      [{ "class": "tree_row", "attributes": ["expanded"] }],
+      "layer1.opacity": 0.0,
+      "layer2.opacity": 0.0,
+      "layer3.opacity": 1.0
+    },
+  
+    {
+      "class": "icon_folder",
+      "settings": ["material_theme_arrow_folders", "material_theme_accent_sky"],
+      "parents":
+      [ { "class": "tree_row", "attributes": ["hover"] }],
+      "layer1.opacity": 0.0,
+      "layer2.opacity": 1.0,
+      "layer3.opacity": 0.0
+    },
+  
+    {
+      "class": "icon_folder",
+      "settings": ["material_theme_arrow_folders", "material_theme_accent_sky"],
+      "parents":
+      [ { "class": "tree_row", "attributes": ["expanded", "hover"] }],
+      "layer1.opacity": 0.0,
+      "layer2.opacity": 0.0,
+      "layer3.opacity": 1.0
+    },
+  
       // tab set scroll left | scroll right
   
     {
@@ -5671,13 +7091,6 @@
     },
   
       // Panels data / score
-  
-    {
-      "class": "quick_panel_score_label",
-      "settings": ["material_theme_accent_sky"],
-      "fg": [132, 255, 255],
-      "selected_fg": [255, 255, 255, 255]
-    },
   
     {
       "class": "show_tabs_dropdown_button",
@@ -5776,6 +7189,31 @@
       "layer0.texture": "Material Theme/assets/accent-sky/find_reverse--hover.png",
     },
   
+      // Minimap
+  
+    {
+      "class": "minimap_control",
+      "settings": ["material_theme_accent_sky"],
+      "viewport_color": [132, 255, 255, 60]
+    },
+  
+      // Scrollbars
+  
+    {
+      "class": "puck_control",
+      "settings": ["material_theme_accent_scrollbars", "material_theme_accent_sky"],
+      "layer1.texture": "Material Theme/assets/accent-sky/thumb_vertical.png",
+      "layer1.opacity": 0.8
+    },
+  
+    {
+      "class": "puck_control",
+      "attributes": ["horizontal"],
+      "settings": ["material_theme_accent_scrollbars", "material_theme_accent_sky"],
+      "layer1.texture": "Material Theme/assets/accent-sky/thumb_horizontal.png",
+      "layer1.opacity": 0.8
+    },
+  
   // Tomato Accent Color
   // ===========================================================================
   
@@ -5821,6 +7259,13 @@
       "layer1.texture": "Material Theme/assets/accent-tomato/tree_highlight.png",
     },
   
+    {
+      "class": "tree_row",
+      "settings": ["material_theme_accent_tomato", "material_theme_bullet_tree_indicator"],
+      "layer1.texture": "Material Theme/assets/accent-tomato/tree_highlight--bullet.png",
+      "layer1.inner_margin": [22, 16, 0, 0]
+    },
+  
       // Tabs
   
     {
@@ -5853,6 +7298,13 @@
       "attributes": ["dirty"],
       "settings": ["material_theme_accent_tomato"],
       "layer0.texture": "Material Theme/assets/accent-tomato/dirty_icon--hover.png",
+    },
+  
+    {
+      "class": "sidebar_label",
+      "settings": ["material_theme_accent_tomato"],
+      "parents": [{"class": "tree_row", "attributes": ["selected"]}],
+      "color": [244, 67, 54]
     },
   
     {
@@ -5919,6 +7371,46 @@
       },
     },
   
+      // Arrow icon folder
+    {
+      "class": "icon_folder",
+      "settings": ["material_theme_arrow_folders", "material_theme_accent_tomato"],
+      "layer2.texture": "Material Theme/assets/accent-tomato/arrow_folder--hover.png",
+      "layer2.opacity": 0.0,
+      "layer3.texture": "Material Theme/assets/accent-tomato/arrow_folder--opened.png",
+      "layer3.opacity": 0.0
+    },
+  
+    {
+      "class": "icon_folder",
+      "settings": ["material_theme_arrow_folders", "material_theme_accent_tomato"],
+      "parents":
+      [{ "class": "tree_row", "attributes": ["expanded"] }],
+      "layer1.opacity": 0.0,
+      "layer2.opacity": 0.0,
+      "layer3.opacity": 1.0
+    },
+  
+    {
+      "class": "icon_folder",
+      "settings": ["material_theme_arrow_folders", "material_theme_accent_tomato"],
+      "parents":
+      [ { "class": "tree_row", "attributes": ["hover"] }],
+      "layer1.opacity": 0.0,
+      "layer2.opacity": 1.0,
+      "layer3.opacity": 0.0
+    },
+  
+    {
+      "class": "icon_folder",
+      "settings": ["material_theme_arrow_folders", "material_theme_accent_tomato"],
+      "parents":
+      [ { "class": "tree_row", "attributes": ["expanded", "hover"] }],
+      "layer1.opacity": 0.0,
+      "layer2.opacity": 0.0,
+      "layer3.opacity": 1.0
+    },
+  
       // tab set scroll left | scroll right
   
     {
@@ -5979,13 +7471,6 @@
     },
   
       // Panels data / score
-  
-    {
-      "class": "quick_panel_score_label",
-      "settings": ["material_theme_accent_tomato"],
-      "fg": [244, 67, 54],
-      "selected_fg": [255, 255, 255, 255]
-    },
   
     {
       "class": "show_tabs_dropdown_button",
@@ -6084,6 +7569,31 @@
       "layer0.texture": "Material Theme/assets/accent-tomato/find_reverse--hover.png",
     },
   
+      // Minimap
+  
+    {
+      "class": "minimap_control",
+      "settings": ["material_theme_accent_tomato"],
+      "viewport_color": [244, 67, 54, 60]
+    },
+  
+      // Scrollbars
+  
+    {
+      "class": "puck_control",
+      "settings": ["material_theme_accent_scrollbars", "material_theme_accent_tomato"],
+      "layer1.texture": "Material Theme/assets/accent-tomato/thumb_vertical.png",
+      "layer1.opacity": 0.8
+    },
+  
+    {
+      "class": "puck_control",
+      "attributes": ["horizontal"],
+      "settings": ["material_theme_accent_scrollbars", "material_theme_accent_tomato"],
+      "layer1.texture": "Material Theme/assets/accent-tomato/thumb_horizontal.png",
+      "layer1.opacity": 0.8
+    },
+  
   
   
   // @ THEME OPTIONS
@@ -6103,6 +7613,12 @@
       "class": "tabset_control",
       "settings": ["material_theme_tabs_autowidth"],
       "tab_width": 0
+    },
+  
+    {
+      "class": "tabset_control",
+      "settings": ["!enable_tab_scrolling"],
+      "content_margin": [0, 0, 8, 0],
     },
   
     {
@@ -6128,7 +7644,7 @@
       "font.bold": true
     },
   
-      // Folder animation
+      // Disable Folder animation
   
     {
       "class": "icon_folder",
@@ -6139,7 +7655,40 @@
       "layer3.texture": "Material Theme/assets/commons/folder--hover.png",
     },
   
-      // Folder animation Lime
+      // Disable Folder animation
+  
+    {
+      "class": "icon_folder",
+      "settings": ["material_theme_disable_folder_animation", "material_theme_arrow_folders"],
+      "parents": [{ "class": "tree_row", "attributes": ["expanded", "hover"] }],
+      "layer1.opacity": 0.0,
+      "layer2.opacity": 0.0,
+      "layer3.texture": "Material Theme/assets/commons/arrow_folder--opened.png",
+    },
+  
+      // Folder hover no animation
+  
+    
+  
+    {
+      "class": "icon_folder",
+      "settings": ["material_theme_disable_folder_animation", "material_theme_accent_teal"],
+      "parents": [{ "class": "tree_row", "attributes": ["expanded", "hover"] }],
+      "layer1.opacity": 0.0,
+      "layer2.opacity": 0.0,
+      "layer3.texture": "Material Theme/assets/accent-teal/folder--hover.png",
+    },
+  
+    {
+      "class": "icon_folder",
+      "settings": ["material_theme_disable_folder_animation", "material_theme_arrow_folders", "material_theme_accent_teal"],
+      "parents": [{ "class": "tree_row", "attributes": ["expanded", "hover"] }],
+      "layer1.opacity": 0.0,
+      "layer2.opacity": 0.0,
+      "layer3.texture": "Material Theme/assets/accent-teal/arrow_folder--opened.png",
+    },
+  
+    
   
     {
       "class": "icon_folder",
@@ -6150,7 +7699,16 @@
       "layer3.texture": "Material Theme/assets/accent-lime/folder--hover.png",
     },
   
-      // Folder animation Purple
+    {
+      "class": "icon_folder",
+      "settings": ["material_theme_disable_folder_animation", "material_theme_arrow_folders", "material_theme_accent_lime"],
+      "parents": [{ "class": "tree_row", "attributes": ["expanded", "hover"] }],
+      "layer1.opacity": 0.0,
+      "layer2.opacity": 0.0,
+      "layer3.texture": "Material Theme/assets/accent-lime/arrow_folder--opened.png",
+    },
+  
+    
   
     {
       "class": "icon_folder",
@@ -6161,7 +7719,16 @@
       "layer3.texture": "Material Theme/assets/accent-purple/folder--hover.png",
     },
   
-      // Folder animation Red
+    {
+      "class": "icon_folder",
+      "settings": ["material_theme_disable_folder_animation", "material_theme_arrow_folders", "material_theme_accent_purple"],
+      "parents": [{ "class": "tree_row", "attributes": ["expanded", "hover"] }],
+      "layer1.opacity": 0.0,
+      "layer2.opacity": 0.0,
+      "layer3.texture": "Material Theme/assets/accent-purple/arrow_folder--opened.png",
+    },
+  
+    
   
     {
       "class": "icon_folder",
@@ -6172,7 +7739,16 @@
       "layer3.texture": "Material Theme/assets/accent-red/folder--hover.png",
     },
   
-      // Folder animation Orange
+    {
+      "class": "icon_folder",
+      "settings": ["material_theme_disable_folder_animation", "material_theme_arrow_folders", "material_theme_accent_red"],
+      "parents": [{ "class": "tree_row", "attributes": ["expanded", "hover"] }],
+      "layer1.opacity": 0.0,
+      "layer2.opacity": 0.0,
+      "layer3.texture": "Material Theme/assets/accent-red/arrow_folder--opened.png",
+    },
+  
+    
   
     {
       "class": "icon_folder",
@@ -6183,7 +7759,16 @@
       "layer3.texture": "Material Theme/assets/accent-orange/folder--hover.png",
     },
   
-      // Folder animation Yellow
+    {
+      "class": "icon_folder",
+      "settings": ["material_theme_disable_folder_animation", "material_theme_arrow_folders", "material_theme_accent_orange"],
+      "parents": [{ "class": "tree_row", "attributes": ["expanded", "hover"] }],
+      "layer1.opacity": 0.0,
+      "layer2.opacity": 0.0,
+      "layer3.texture": "Material Theme/assets/accent-orange/arrow_folder--opened.png",
+    },
+  
+    
   
     {
       "class": "icon_folder",
@@ -6194,8 +7779,16 @@
       "layer3.texture": "Material Theme/assets/accent-yellow/folder--hover.png",
     },
   
+    {
+      "class": "icon_folder",
+      "settings": ["material_theme_disable_folder_animation", "material_theme_arrow_folders", "material_theme_accent_yellow"],
+      "parents": [{ "class": "tree_row", "attributes": ["expanded", "hover"] }],
+      "layer1.opacity": 0.0,
+      "layer2.opacity": 0.0,
+      "layer3.texture": "Material Theme/assets/accent-yellow/arrow_folder--opened.png",
+    },
   
-      // Folder animation Indigo
+    
   
     {
       "class": "icon_folder",
@@ -6206,7 +7799,16 @@
       "layer3.texture": "Material Theme/assets/accent-indigo/folder--hover.png",
     },
   
-      // Folder animation Pink
+    {
+      "class": "icon_folder",
+      "settings": ["material_theme_disable_folder_animation", "material_theme_arrow_folders", "material_theme_accent_indigo"],
+      "parents": [{ "class": "tree_row", "attributes": ["expanded", "hover"] }],
+      "layer1.opacity": 0.0,
+      "layer2.opacity": 0.0,
+      "layer3.texture": "Material Theme/assets/accent-indigo/arrow_folder--opened.png",
+    },
+  
+    
   
     {
       "class": "icon_folder",
@@ -6217,7 +7819,16 @@
       "layer3.texture": "Material Theme/assets/accent-pink/folder--hover.png",
     },
   
-      // Folder animation Blue
+    {
+      "class": "icon_folder",
+      "settings": ["material_theme_disable_folder_animation", "material_theme_arrow_folders", "material_theme_accent_pink"],
+      "parents": [{ "class": "tree_row", "attributes": ["expanded", "hover"] }],
+      "layer1.opacity": 0.0,
+      "layer2.opacity": 0.0,
+      "layer3.texture": "Material Theme/assets/accent-pink/arrow_folder--opened.png",
+    },
+  
+    
   
     {
       "class": "icon_folder",
@@ -6228,7 +7839,16 @@
       "layer3.texture": "Material Theme/assets/accent-blue/folder--hover.png",
     },
   
-      // Folder animation Cyan
+    {
+      "class": "icon_folder",
+      "settings": ["material_theme_disable_folder_animation", "material_theme_arrow_folders", "material_theme_accent_blue"],
+      "parents": [{ "class": "tree_row", "attributes": ["expanded", "hover"] }],
+      "layer1.opacity": 0.0,
+      "layer2.opacity": 0.0,
+      "layer3.texture": "Material Theme/assets/accent-blue/arrow_folder--opened.png",
+    },
+  
+    
   
     {
       "class": "icon_folder",
@@ -6239,7 +7859,16 @@
       "layer3.texture": "Material Theme/assets/accent-cyan/folder--hover.png",
     },
   
-      // Folder animation Bright teal
+    {
+      "class": "icon_folder",
+      "settings": ["material_theme_disable_folder_animation", "material_theme_arrow_folders", "material_theme_accent_cyan"],
+      "parents": [{ "class": "tree_row", "attributes": ["expanded", "hover"] }],
+      "layer1.opacity": 0.0,
+      "layer2.opacity": 0.0,
+      "layer3.texture": "Material Theme/assets/accent-cyan/arrow_folder--opened.png",
+    },
+  
+    
   
     {
       "class": "icon_folder",
@@ -6250,7 +7879,16 @@
       "layer3.texture": "Material Theme/assets/accent-bright-teal/folder--hover.png",
     },
   
-      // Folder animation Acid lime
+    {
+      "class": "icon_folder",
+      "settings": ["material_theme_disable_folder_animation", "material_theme_arrow_folders", "material_theme_accent_bright-teal"],
+      "parents": [{ "class": "tree_row", "attributes": ["expanded", "hover"] }],
+      "layer1.opacity": 0.0,
+      "layer2.opacity": 0.0,
+      "layer3.texture": "Material Theme/assets/accent-bright-teal/arrow_folder--opened.png",
+    },
+  
+    
   
     {
       "class": "icon_folder",
@@ -6261,7 +7899,16 @@
       "layer3.texture": "Material Theme/assets/accent-acid-lime/folder--hover.png",
     },
   
-      // Folder animation Graphite
+    {
+      "class": "icon_folder",
+      "settings": ["material_theme_disable_folder_animation", "material_theme_arrow_folders", "material_theme_accent_acid-lime"],
+      "parents": [{ "class": "tree_row", "attributes": ["expanded", "hover"] }],
+      "layer1.opacity": 0.0,
+      "layer2.opacity": 0.0,
+      "layer3.texture": "Material Theme/assets/accent-acid-lime/arrow_folder--opened.png",
+    },
+  
+    
   
     {
       "class": "icon_folder",
@@ -6272,7 +7919,16 @@
       "layer3.texture": "Material Theme/assets/accent-graphite/folder--hover.png",
     },
   
-      // Folder animation Breaking bad
+    {
+      "class": "icon_folder",
+      "settings": ["material_theme_disable_folder_animation", "material_theme_arrow_folders", "material_theme_accent_graphite"],
+      "parents": [{ "class": "tree_row", "attributes": ["expanded", "hover"] }],
+      "layer1.opacity": 0.0,
+      "layer2.opacity": 0.0,
+      "layer3.texture": "Material Theme/assets/accent-graphite/arrow_folder--opened.png",
+    },
+  
+    
   
     {
       "class": "icon_folder",
@@ -6283,7 +7939,16 @@
       "layer3.texture": "Material Theme/assets/accent-brba/folder--hover.png",
     },
   
-      // Folder animation Sky
+    {
+      "class": "icon_folder",
+      "settings": ["material_theme_disable_folder_animation", "material_theme_arrow_folders", "material_theme_accent_brba"],
+      "parents": [{ "class": "tree_row", "attributes": ["expanded", "hover"] }],
+      "layer1.opacity": 0.0,
+      "layer2.opacity": 0.0,
+      "layer3.texture": "Material Theme/assets/accent-brba/arrow_folder--opened.png",
+    },
+  
+    
   
     {
       "class": "icon_folder",
@@ -6294,7 +7959,16 @@
       "layer3.texture": "Material Theme/assets/accent-sky/folder--hover.png",
     },
   
-      // Folder animation Tomato
+    {
+      "class": "icon_folder",
+      "settings": ["material_theme_disable_folder_animation", "material_theme_arrow_folders", "material_theme_accent_sky"],
+      "parents": [{ "class": "tree_row", "attributes": ["expanded", "hover"] }],
+      "layer1.opacity": 0.0,
+      "layer2.opacity": 0.0,
+      "layer3.texture": "Material Theme/assets/accent-sky/arrow_folder--opened.png",
+    },
+  
+    
   
     {
       "class": "icon_folder",
@@ -6304,6 +7978,17 @@
       "layer2.opacity": 0.0,
       "layer3.texture": "Material Theme/assets/accent-tomato/folder--hover.png",
     },
+  
+    {
+      "class": "icon_folder",
+      "settings": ["material_theme_disable_folder_animation", "material_theme_arrow_folders", "material_theme_accent_tomato"],
+      "parents": [{ "class": "tree_row", "attributes": ["expanded", "hover"] }],
+      "layer1.opacity": 0.0,
+      "layer2.opacity": 0.0,
+      "layer3.texture": "Material Theme/assets/accent-tomato/arrow_folder--opened.png",
+    },
+  
+    
   
       // Small status bar
   
@@ -6372,7 +8057,39 @@
       "settings": ["material_theme_disable_fileicons"],
       "layer0.opacity": 0,
       "content_margin": [0, 0]
-    }
+    },
+  
+      // Bigger file_type icons
+  
+    {
+      "class": "icon_file_type",
+      "settings": ["material_theme_big_fileicons"],
+      "content_margin": [11, 11]
+    },
+  
+    {
+      "class": "icon_file_type",
+      "settings": ["material_theme_big_fileicons"],
+      "parents": [{"class": "tree_row", "attributes": ["selected"]}],
+      "content_margin": [11, 11]
+    },
+  
+        // Bright scrollbars
+  
+    {
+      "class": "puck_control",
+      "settings": ["material_theme_bright_scrollbars"],
+      "layer1.texture": "Material Theme/assets/commons/thumb_vertical.png",
+      "layer1.opacity": 0.2
+    },
+  
+    {
+      "class": "puck_control",
+      "attributes": ["horizontal"],
+      "settings": ["material_theme_bright_scrollbars"],
+      "layer1.texture": "Material Theme/assets/commons/thumb_horizontal.png",
+      "layer1.opacity": 0.2
+    },
   
   //
 ]
