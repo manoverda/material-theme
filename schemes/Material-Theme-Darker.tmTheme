@@ -630,15 +630,24 @@
 		</dict>
 		<dict>
 			<key>name</key>
-			<string>Markup - Underline</string>
+			<string>Markup - inline link</string>
 			<key>scope</key>
-			<string>markup.underline</string>
+			<string>meta.link.inline.markdown, meta.link.reference.def.markdown, meta.link.reference.markdown</string>
 			<key>settings</key>
 			<dict>
-				<key>fontStyle</key>
-				<string>underline</string>
 				<key>foreground</key>
-				<string>#F78C6C</string>
+				<string>#4A4A4A</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Markup - inet link</string>
+			<key>scope</key>
+			<string>meta.link.inet.markdown, meta.link.reference.literal.markdown</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#82AAFF</string>
 			</dict>
 		</dict>
 		<dict>
@@ -699,18 +708,7 @@
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#C792EA</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>name</key>
-			<string>Markdown - Link Anchor</string>
-			<key>scope</key>
-			<string>constant.other.reference.link.markdown</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#FFCB6B</string>
+				<string>#4A4A4A</string>
 			</dict>
 		</dict>
 		<dict>
